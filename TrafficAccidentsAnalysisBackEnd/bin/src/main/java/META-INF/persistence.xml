@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="trafficaccidentsanalysis">
+		<class>com.trafficaccidentsanalysis.backend.model.Accident</class>
+		<class>com.trafficaccidentsanalysis.backend.model.Attachment</class>
+		<class>com.trafficaccidentsanalysis.backend.model.Employee</class>
+		<class>com.trafficaccidentsanalysis.backend.model.Employeecontact</class>
+		<class>com.trafficaccidentsanalysis.backend.model.Employeerole</class>
+		<class>com.trafficaccidentsanalysis.backend.model.Motorist</class>
+		<class>com.trafficaccidentsanalysis.backend.model.Oldpassword</class>
+		<class>com.trafficaccidentsanalysis.backend.model.Pedastrian</class>
+		<class>com.trafficaccidentsanalysis.backend.model.Personinvehicle</class>
+		<class>com.trafficaccidentsanalysis.backend.model.Roadtype</class>
+		<class>com.trafficaccidentsanalysis.backend.model.Role</class>
+		<class>com.trafficaccidentsanalysis.backend.model.Vehicle</class>
+	</persistence-unit>
+</persistence>
