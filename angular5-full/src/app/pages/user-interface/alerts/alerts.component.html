@@ -1,0 +1,57 @@
+<div id="content_wrapper" class="fullWidth1-wrapper">
+	<div class="content">
+		<header class="header-wrapper header-sm">
+			<h1>{{title}}</h1>
+		</header>
+		<div class="content-body">
+			<div class="card">
+				<header class="card-header">
+					<h2 class="card-title">Alerts</h2>
+					<small class="card-subtitle">Provides contextual feedback messages for typical user actions with the handful of available and flexible alert messages.</small>
+					<ul class="actions icons top-right">
+						<li>
+							<a href="javascript:void(0)" data-toggle-view="code">
+						   <i class="zmdi zmdi-code"></i>
+						  </a>
+						</li>
+					</ul>
+				</header>
+				<div class="card-block">
+					<alert type="success">
+						<strong>Well done!</strong> You successfully read this important alert message.
+					</alert>
+					<alert type="info">
+						<strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+					</alert>
+					<alert type="warning">
+						<strong>Warning!</strong> Better check yourself, you're not looking too good.
+					</alert>
+					<alert type="danger">
+						<strong>Oh snap!</strong> Change a few things up and try submitting again.
+					</alert>
+				</div>
+			</div>
+			<div class="card">
+				<header class="card-header">
+					<h2 class="card-title">Dismissible Alerts</h2>
+					<small class="card-subtitle">Alerts have dismiss option. Enabling it will show close button to the right of the alert.</small>
+					<ul class="actions icons top-right">
+						<li>
+							<a href="javascript:void(0)" data-toggle-view="code">
+						   <i class="zmdi zmdi-code"></i>
+						  </a>
+						</li>
+					</ul>
+				</header>
+				<div class="card-block">
+					<div *ngFor="let alert of alerts">
+					  <alert [type]="alert.type" dismissible="true">{{ alert.msg }}</alert>
+					</div>
+					<button type="button" class="btn btn-default" (click)="reset()">Reset</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+<footer id="footer_wrapper" class="footer_wrapper"></footer>

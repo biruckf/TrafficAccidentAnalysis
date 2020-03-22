@@ -1,0 +1,99 @@
+<div class="card">
+    <header class="card-header p-15">
+        <h2 class="card-title">Card Wall for Sprint 34</h2>
+        <small>Sprint 34</small>
+        <ul class="actions icons  top-right">
+            <li class="dropdown" dropdown>
+                <a href="javascript:void(0)" *dropdownToggle>
+                    <i class="zmdi zmdi-sort"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right btn-primary" *dropdownMenu>
+                    <li>
+                        <a href="javascript:void(0)"><span class="badge-status default"></span> Backlog</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)"><span class="badge-status warning"></span> On Hold</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)"><span class="badge-status primary"></span>In Progress</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)"><span class="badge-status danger"></span> Needs Reviewed</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)"><span class="badge-status success"></span> Complete</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </header>
+    <div class="card-block card-default p-0">
+        <ul class="scrum-group">
+            <!-- Scrum Item -->
+            <li class="scrum-item back-log">
+                <header class="scrum-header">
+                    <h5 class="scrum-title">Add to cart animation</h5>
+                    <small></small>
+                    <ul class="float-right style-none m-r-10">
+                        <li>
+                            <span class="label label-primary">In Progress</span>
+                        </li>
+                    </ul>
+                </header>
+                <div class="scrum-body p-t-5 p-b-10">
+                    <img src="assets/img/profiles/01.jpg" alt="" class="rounded-circle"/>
+                    <img src="assets/img/profiles/03.jpg" alt="" class="rounded-circle"/>
+                    <img src="assets/img/profiles/08.jpg" alt="" class="rounded-circle"/>
+                </div>
+                <div class="scrum-footer p-15">
+                    <mat-progress-bar class="progess-bar" [color]="onHoldColor" [mode]="onHoldMode"
+                                      [value]="onHoldValue" [bufferValue]="onHoldBufferValue"></mat-progress-bar>
+                </div>
+            </li>
+            <!-- End Scrum Item -->
+            <!-- Scrum Item -->
+            <li class="scrum-item on-hold">
+                <header class="scrum-header">
+                    <h5 class="scrum-title">Product page A/B test</h5>
+                    <small></small>
+                    <ul class="float-right style-none m-r-10">
+                        <li>
+                            <span class="label label-warning">On Hold</span>
+                        </li>
+                    </ul>
+                </header>
+                <div class="scrum-body p-t-5 p-b-10">
+                    <img src="assets/img/profiles/02.jpg" alt="" class="rounded-circle"/>
+                    <img src="assets/img/profiles/06.jpg" alt="" class="rounded-circle"/>
+                </div>
+                <div class="scrum-footer p-15">
+                    <mat-progress-bar class="progess-bar" [color]="completedColor" [mode]="completedMode"
+                                      [value]="completedValue" [bufferValue]="completedBufferValue"></mat-progress-bar>
+                </div>
+            </li>
+            <!-- End Scrum Item -->
+            <!-- Scrum Item -->
+            <li class="scrum-item complete">
+                <header class="scrum-header">
+                    <h5 class="scrum-title">Refactor web components</h5>
+                    <small></small>
+                    <ul class="float-right style-none m-r-10">
+                        <li>
+                            <span class="label label-success">Completed</span>
+                        </li>
+                    </ul>
+                </header>
+                <div class="scrum-body p-t-5 p-b-10">
+                    <img src="assets/img/profiles/07.jpg" alt="" class="rounded-circle"/>
+                    <img src="assets/img/profiles/05.jpg" alt="" class="rounded-circle"/>
+                    <img src="assets/img/profiles/15.jpg" alt="" class="rounded-circle"/>
+                </div>
+                <div class="scrum-footer p-15">
+                    <mat-progress-bar class="progess-bar" [color]="progressColor" [mode]="progressMode"
+                                      [value]="progressValue" [bufferValue]="progressBufferValue"></mat-progress-bar>
+                </div>
+            </li>
+            <!-- End Scrum Item -->
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,379 @@
+<div id="content_wrapper" class="boxedlayout2-wrapper">
+    <div class="content">
+        <div class="header-wrapper header-md overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <header>
+                            <h1>Form Validation</h1>
+                        </header>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-body container">
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <header class="card-header">
+                            <h2 class="card-title">Angular Custom Validation Demo</h2>
+                        </header>
+                        <div class="card-block">
+                            <p>
+                                Help users fix input errors as soon as they are detected. Disable the submission of a
+                                form if errors are detected, and if detected only after form submission, clearly explain
+                                the error and how to fix it.
+                            </p>
+                            <form class="form-horizontal" novalidate>
+
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                            <input matInput class="form-control" placeholder="Required" type="text"
+                                                   ngModel name="requried" #requried="ngModel" required/>
+                                        </mat-input-container>
+                                        <p class="error" *ngIf="requried?.errors?.required">required error</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                            <input matInput placeholder="minlength" class="form-control" type="text"
+                                                   ngModel name="minlength" #minlength="ngModel" minlength="5"/>
+                                        </mat-input-container>
+                                        <p class="error" *ngIf="minlength?.errors?.minlength">minlength error</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                            <input matInput placeholder="maxlength" class="form-control" type="text"
+                                                   ngModel name="maxlength" #maxlength="ngModel" maxlength="5"/>
+                                        </mat-input-container>
+                                        <p class="error" *ngIf="maxlength?.errors?.maxlength">maxlength error</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                            <input matInput placeholder="pattern [a-z]{6}" class="form-control"
+                                                   type="text" ngModel name="pattern" #pattern="ngModel"
+                                                   pattern="[a-z]{6}"/>
+                                        </mat-input-container>
+                                        <p class="error" *ngIf="pattern?.errors?.pattern">pattern error - try cccccc</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                            <input matInput placeholder="base64" class="form-control" type="text"
+                                                   ngModel name="base64" #base64="ngModel" base64/>
+                                        </mat-input-container>
+                                        <p class="error" *ngIf="base64?.errors?.base64">base64 error</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                            <input matInput placeholder="creditCard" class="form-control" type="text"
+                                                   ngModel name="creditCard" #creditCard="ngModel" creditCard/>
+                                        </mat-input-container>
+                                        <p class="error" *ngIf="creditCard?.errors?.creditCard">creditCard error</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                            <input matInput placeholder="date" class="form-control" type="text" ngModel
+                                                   name="date" #date="ngModel" date/>
+                                        </mat-input-container>
+                                        <p class="error" *ngIf="date?.errors?.date">date error</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                            <input matInput placeholder="dateISO" class="form-control" type="text"
+                                                   ngModel name="dateISO" #dateISO="ngModel" dateISO/>
+                                        </mat-input-container>
+                                        <p class="error" *ngIf="dateISO?.errors?.dateISO">dateISO error</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                            <input matInput placeholder="maxDate 2018-12-12" class="form-control"
+                                                   type="text" ngModel name="maxDate" #maxDate="ngModel"
+                                                   maxDate="2016-12-12"/>
+                                        </mat-input-container>
+                                        <p class="error" *ngIf="maxDate?.errors?.maxDate">maxDate error</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                            <input matInput placeholder="minDate 2016-12-12" class="form-control"
+                                                   type="text" ngModel name="minDate" #minDate="ngModel"
+                                                   minDate="2016-12-12"/>
+                                        </mat-input-container>
+                                        <p class="error" *ngIf="minDate?.errors?.minDate">minDate error</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                            <input matInput placeholder="digits" class="form-control" type="text"
+                                                   ngModel name="digits" #digits="ngModel" digits/>
+                                        </mat-input-container>
+                                        <p class="error" *ngIf="digits?.errors?.digits">digits error</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                            <input matInput placeholder="email" class="form-control" type="text" ngModel
+                                                   name="email" #email="ngModel" email/>
+                                        </mat-input-container>
+                                        <p class="error" *ngIf="email?.errors?.email">email error</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                            <input matInput placeholder="equal aabbcc" class="form-control" type="text"
+                                                   ngModel name="equal" #equal="ngModel" equal="aabbcc"/>
+                                        </mat-input-container>
+                                        <p class="error" *ngIf="equal?.errors?.equal">equal error</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                            <input matInput placeholder="equal aabbcc" class="form-control" type="text"
+                                                   ngModel name="notEqual" #notEqual="ngModel" notEqual="aabbcc"/>
+                                        </mat-input-container>
+                                        <p class="error" *ngIf="notEqual?.errors?.notEqual">notEqual error</p>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                            <input matInput placeholder="greater than 10" class="form-control"
+                                                   type="text" ngModel name="gt" #gt="ngModel" gt="10"/>
+                                        </mat-input-container>
+                                        <p class="error" *ngIf="gt?.errors?.gt">greater than error</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                            <input matInput placeholder="greater than equal 10" class="form-control"
+                                                   type="text" ngModel name="gte" #gte="ngModel" gte="10"/>
+                                        </mat-input-container>
+                                        <p class="error" *ngIf="gte?.errors?.gte">greater than equal error</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                            <input matInput placeholder="less than 5" class="form-control" type="text"
+                                                   ngModel name="lt" #lt="ngModel" lt="5"/>
+                                        </mat-input-container>
+                                        <p class="error" *ngIf="lt?.errors?.lt">less than error</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                            <input matInput placeholder="less than equal 5" class="form-control"
+                                                   type="text" ngModel name="lte" #lte="ngModel" lte="5"/>
+                                        </mat-input-container>
+                                        <p class="error" *ngIf="lte?.errors?.lte">less than equal error</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                            <input matInput placeholder="json" class="form-control" type="text" ngModel
+                                                   name="json" #json="ngModel" json/>
+                                        </mat-input-container>
+                                        <p class="error" *ngIf="json?.errors?.json">json error</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                            <input matInput placeholder="max 5" class="form-control" type="text" ngModel
+                                                   name="max" #max="ngModel" max="5"/>
+                                        </mat-input-container>
+                                        <p class="error" *ngIf="max?.errors?.max">max error</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                            <input matInput placeholder="min 5" class="form-control" type="text" ngModel
+                                                   name="min" #min="ngModel" min="5"/>
+                                        </mat-input-container>
+                                        <p class="error" *ngIf="min?.errors?.min">min error</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                            <input matInput placeholder="number" class="form-control" type="text"
+                                                   ngModel name="number" #number="ngModel" number/>
+                                        </mat-input-container>
+                                        <p class="error" *ngIf="number?.errors?.number">number error</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                            <input matInput placeholder="phone" class="form-control" type="text" ngModel
+                                                   name="phone" #phone="ngModel" phone/>
+                                        </mat-input-container>
+                                        <p class="error" *ngIf="phone?.errors?.phone">phone error</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                            <input matInput placeholder="range 4 - 9" class="form-control" type="text"
+                                                   ngModel name="range" #range="ngModel" [range]="[4,9]"/>
+                                        </mat-input-container>
+                                        <p class="error" *ngIf="range?.errors?.range">range error</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                            <input matInput placeholder="rangeLength" class="form-control" type="text"
+                                                   ngModel name="rangeLength" #rangeLength="ngModel"
+                                                   [rangeLength]="[4,9]"/>
+                                        </mat-input-container>
+                                        <p class="error" *ngIf="rangeLength?.errors?.rangeLength">rangeLength error</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                            <input matInput placeholder="url" class="form-control" type="text" ngModel
+                                                   name="url" #url="ngModel" url/>
+                                        </mat-input-container>
+                                        <p class="error" *ngIf="url?.errors?.url">url error</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                            <input matInput placeholder="uuid" class="form-control" type="text" ngModel
+                                                   name="uuid" #uuid="ngModel" uuid="3"/>
+                                        </mat-input-container>
+                                        <p class="error" *ngIf="uuid?.errors?.uuid">uuid error</p>
+                                    </div>
+                                </div>
+                                <div class="col text-right">
+                                    <button type="submit" class="btn btn-accent" mat-ripple>Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <header class="card-header">
+                            <h2 class="card-title">Confirm password</h2>
+                        </header>
+                        <div class="card-block">
+                            <form class="form-horizontal" novalidate>
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                            <input matInput placeholder="password" class="form-control" type="text"
+                                                   ngModel name="password" #password="ngModel"/>
+                                        </mat-input-container>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                            <input matInput placeholder="confirm password" class="form-control"
+                                                   type="text" ngModel name="equalTo" #equalTo="ngModel"
+                                                   [equalTo]="password"/>
+                                        </mat-input-container>
+                                        <p class="error" *ngIf="equalTo?.errors?.equalTo">equalTo error</p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <header class="card-header">
+                            <h2 class="card-title">Cannot reuse old password</h2>
+                        </header>
+                        <div class="card-block">
+                            <form class="form-horizontal" novalidate>
+
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                            <input matInput placeholder="old password" class="form-control" type="text"
+                                                   ngModel name="oldPassword" #oldPassword="ngModel"/>
+                                        </mat-input-container>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                            <input matInput placeholder="new password" class="form-control" type="text"
+                                                   ngModel name="notEqualTo" #notEqualTo="ngModel"
+                                                   [notEqualTo]="oldPassword"/>
+                                        </mat-input-container>
+                                        <p class="error" *ngIf="notEqualTo?.errors?.notEqualTo">notEqualTo error</p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer id="footer_wrapper" class="footer_wrapper"></footer>

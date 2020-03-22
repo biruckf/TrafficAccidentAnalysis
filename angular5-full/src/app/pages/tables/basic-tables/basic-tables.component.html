@@ -1,0 +1,20 @@
+<div id="content_wrapper" class="fullWidth1-wrapper">
+	<div class="content">
+		<header class="header-wrapper header-sm">
+			<h1>Basic Tables</h1>
+		</header>
+		<div class="content-body">
+			<ngx-datatable
+					class="material"
+					[rows]="rows | async"
+					[columns]="columns"
+					[columnMode]="'force'"
+					[headerHeight]="50"
+					[footerHeight]="50"
+					[rowHeight]="50">
+	</ngx-datatable>
+		</div>
+	</div>
+
+</div>
+	<footer id="footer_wrapper" class="footer_wrapper"></footer>

@@ -1,0 +1,196 @@
+<!-- Content Wrapper - Left Sidenav 2-->
+<div id="content_wrapper" class="leftSidenav2-wrapper noteapp">
+
+    <!--// Sidenav component container-->
+    <mat-sidenav-container class="sidenav-container">
+        <!-- Sidenav -->
+        <mat-sidenav #leftSidenav2 mode="{{navMode}}" class="sidenav">
+            <aside id="leftSidenav2">
+                <nav class="submenu border-bottom">
+                    <ul class="list-group note-labels">
+                        <li mat-ripple class="list-group-item"><a href="javascript:void(0)"><i
+                                class="mdi mdi-lightbulb"></i> Notes</a></li>
+                        <li mat-ripple class="list-group-item"><a href="javascript:void(0)"><i
+                                class="mdi mdi-bell-ring"></i> Reminders</a></li>
+                    </ul>
+                </nav>
+                <nav class="submenu border-bottom m-t-20">
+                    <ul class="list-group note-labels">
+                        <li mat-ripple class="list-group-item"><a href="javascript:void(0)"><i
+                                class="zmdi zmdi-label-alt"></i> Inspiration</a></li>
+                        <li mat-ripple class="list-group-item"><a href="javascript:void(0)"><i
+                                class="zmdi zmdi-label-alt"></i> Personal</a></li>
+                        <li mat-ripple class="list-group-item"><a href="javascript:void(0)"><i
+                                class="zmdi zmdi-label-alt"></i> Work</a></li>
+                    </ul>
+                </nav>
+                <nav class="submenu border-bottom m-t-20">
+                    <ul class="list-group note-labels">
+                        <li mat-ripple class="list-group-item"><a href="javascript:void(0)"><i
+                                class="zmdi zmdi-archive"></i> Archive</a></li>
+                        <li mat-ripple class="list-group-item"><a href="javascript:void(0)"><i
+                                class="zmdi zmdi-delete"></i> Trash</a></li>
+                    </ul>
+                </nav>
+                <nav class="submenu">
+                    <ul class="list-group note-labels">
+                        <li mat-ripple class="list-group-item"><a href="javascript:void(0)"><i
+                                class="zmdi zmdi-settings"></i> Settings</a></li>
+                        <li mat-ripple class="list-group-item"><a href="javascript:void(0)"><i
+                                class="zmdi zmdi-comment-alert"></i> Send feedback</a></li>
+                    </ul>
+                </nav>
+            </aside>
+        </mat-sidenav>
+        <!-- /END Sidenav -->
+        <!-- Page Content -->
+        <div class="content">
+            <div class="header-wrapper header-sm">
+                <header class="container-fluid">
+                    <div class="row">
+                        <h1>Notes</h1>
+                    </div>
+                </header>
+                <ul class="actions icons top-left">
+                    <li>
+                        <a href="javascript:void(0)" (click)="leftSidenav2.toggle()">
+                            <i class="zmdi zmdi-menu"></i>
+                        </a>
+                    </li>
+                </ul>
+                <form name="search" role="search" action="" class="header-search-form">
+                    <div class="form-group" [ngClass]="{'is-focused': isFocused }">
+                        <span class="header-search-icon"> <i class="zmdi zmdi-search"></i> </span>
+                        <input type="text" placeholder="Search notes..." class="form-control" id="content_header_search"
+                               [(ngModel)]="term" name="term" autocomplete="off" (focus)="isFocused = true;"
+                               (blur)="isFocused = false;">
+                    </div>
+                    <button type="submit" class="hidden btn btn-default">Submit</button>
+                </form>
+            </div>
+            <div class="content-body min-h-900">
+                <div class="card card-add-note">
+                    <div id="note-color-wrapper">
+                        <div class="card-header">
+                            <div class="card-title">
+                                Take a note...
+                            </div>
+                        </div>
+                        <form class="form form-horizontal" [formGroup]="noteForm" (ngSubmit)="onSubmit(noteForm.value)"
+                              id="note_form">
+                            <div class="card-block">
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                            <input matInput class="form-control" type="text" id="title" required
+                                                   name="title" placeholder="Your note title"
+                                                   [formControl]="noteForm.controls['title']">
+                                        </mat-input-container>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                            <textarea matInput class="form-control" id="content" required name="content"
+                                                      placeholder="Your note content: feel free to use markdown if you like!"
+                                                      [formControl]="noteForm.controls['content']"></textarea>
+                                        </mat-input-container>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer text-left">
+
+                                <ul class="actions bottom-right">
+                                    <li>
+                                        <button type="submit" mat-ripple class="btn btn-default btn-flat"
+                                                [disabled]="!noteForm.valid">
+                                            Add Note
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!--<masonry>-->
+                <!--<masonry-brick class="brick note-list__item {{note.editing ? 'edit' : ''}}"-->
+                <!--*ngFor="let note of notes">-->
+                <!--<div class="item{{note.editing ? '&#45;&#45;editmode' : ''}} md-bg-yellow-100" id="item&#45;&#45;{{note.id}}">-->
+                <!--<div *ngIf="!note.editing">-->
+                <!--<div class="card card-note transparent">-->
+                <!--<header class="card-header">-->
+                <!--<h2 class="card-title">{{note.title}}</h2>-->
+                <!--</header>-->
+                <!--<div class="card-block">-->
+                <!--<div class="item__content" [innerHTML]=parseMarkdown(note.content)></div>-->
+                <!--</div>-->
+                <!--<div class="card-footer">-->
+                <!--<ul class="actions icons bottom-right">-->
+                <!--<li>-->
+                <!--<button class="item__footer-edit btn btn-default btn-flat"-->
+                <!--(click)="editNote(note)"><i class="zmdi zmdi-edit"></i></button>-->
+                <!--</li>-->
+                <!--<li>-->
+                <!--<button class="item__footer-destroy btn btn-default btn-flat"-->
+                <!--(click)="openDeleteModal(note)"><i class="zmdi zmdi-delete"></i>-->
+                <!--</button>-->
+                <!--</li>-->
+                <!--</ul>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<form *ngIf="note.editing" class="item__form form form-horizontal"-->
+                <!--[formGroup]="editNoteForm" (ngSubmit)="onEditSubmit(note, editNoteForm.value)">-->
+                <!--<div class="form-group row">-->
+                <!--<div class="col">-->
+                <!--<mat-input-container floatPlaceholder="auto" class="float-auto">-->
+                <!--<input matInput class="form-control" type="text" id="title"-->
+                <!--value="{{note.title}}" required name="title"-->
+                <!--[formControl]="editNoteForm.controls['title']">-->
+                <!--</mat-input-container>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="form-group row">-->
+                <!--<div class="col">-->
+                <!--<mat-input-container floatPlaceholder="auto" class="float-auto">-->
+                <!--<textarea matInput class="form-control" id="content" required name="content"-->
+                <!--[formControl]="editNoteForm.controls['content']"-->
+                <!--value="{{note.content}}"></textarea>-->
+                <!--</mat-input-container>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="form-group row">-->
+                <!--<div class="col text-right">-->
+                <!--<button type="submit" class="form__submit  btn btn-primary btn-flat"-->
+                <!--[disabled]="!editNoteForm.valid">Save-->
+                <!--</button>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</form>-->
+                <!--</div>-->
+                <!--</masonry-brick>-->
+                <!--</masonry>-->
+            </div>
+        </div>
+        <!--  Footer Wrapper -->
+        <footer id="footer_wrapper" class="footer_wrapper"></footer>
+    </mat-sidenav-container>
+    <!-- /END Sidenav component container -->
+
+    <div class="card noteapp__deletemodal deletemodal {{showDeleteModal ? 'active' : ''}}">
+        <div class="card-header">
+            <h2 class="deletemodal__title">Are you sure you want to delete this item?</h2>
+        </div>
+        <div class="card-block deletemodal__content">
+            <p>This cannot be undone</p>
+        </div>
+        <div class="card-footer text-right">
+            <button class="deletemodal__button-close btn btn-default btn-flat" (click)="closeDeleteModal()">Cancel
+            </button>
+            <button class="deletemodal__button-remove btn btn-accent btn-flat" (click)="removeNote(noteToDelete)">
+                Delete
+            </button>
+        </div>
+    </div>
+    <!-- /END Content Wrapper - Left Sidenav 2-->
+    <div class="noteapp__overlay bgoverlay {{showOverlay ? 'active' : ''}}" (click)="abortOverlay()"></div>

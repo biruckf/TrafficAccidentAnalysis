@@ -1,0 +1,131 @@
+<div id="content_wrapper" class="boxedlayout2-wrapper">
+	<div class="content">
+		<header class="header-wrapper header-lg overlay app_primary_bg">
+			<!-- <h1 class="text-white">Page Title</h1> -->
+		</header>
+		<div class="content-body container">
+			<div class="row">
+				<div class="col">
+					<div class="card">
+						<header class="card-header">
+							<h2 class="card-title">Dropdowns</h2>
+							<ul class="actions icons top-right">
+								<li>
+									<a href="https://valor-software.com/ngx-bootstrap/#/dropdowns" target="_blank">
+										<i class="zmdi zmdi-link"></i>
+									</a>
+								</li>
+							</ul>
+						</header>
+						<div class="card-block">
+							<p>
+								Dropdowns are toggleable, contextual overlays for displaying lists of links and more. They’re made interactive with the included dropdown directives.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="card min-h-200">
+						<header class="card-header">
+							<h2 class="card-title">Single button dropdowns
+							</h2>
+						</header>
+						<div class="card-block">
+							<div class="btn-group" dropdown>
+								<button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+									Button dropdown <span class="caret"></span>
+								</button>
+								<ul *dropdownMenu class="dropdown-menu" role="menu">
+									<li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
+									<li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
+									<li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
+									<li class="divider dropdown-divider"></li>
+									<li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card min-h-200">
+						<header class="card-header">
+							<h2 class="card-title">Trigger by link</h2>
+						</header>
+						<div class="card-block">
+							<span dropdown (onShown)="onShown()" (onHidden)="onHidden()" (isOpenChange)="isOpenChange()" style="position:relative">
+								<a href dropdownToggle (click)="false">Click me for a dropdown, yo!</a>
+								<ul *dropdownMenu class="dropdown-menu">
+									<li *ngFor="let choice of items">
+										<a class="dropdown-item" href="#">{{choice}}</a>
+									</li>
+								</ul>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="card min-h-200">
+						<header class="card-header">
+							<h2 class="card-title">Split button dropdowns
+							</h2>
+						</header>
+						<div class="card-block">
+							<div class="btn-group" dropdown>
+								<button type="button" class="btn btn-danger">Action</button>
+								<button type="button" dropdownToggle class="btn btn-danger dropdown-toggle dropdown-toggle-split">
+									<span class="caret"></span>
+									<span class="sr-only">Split button!</span>
+								</button>
+								<ul *dropdownMenu class="dropdown-menu" role="menu">
+									<li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
+									<li role="menuitem"><a class="dropdown-item" href="#">Another action</a>
+									</li>
+									<li role="menuitem"><a class="dropdown-item" href="#">Something else
+										here</a></li>
+										<li class="divider dropdown-divider"></li>
+										<li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-8">
+						<div class="card min-h-200">
+							<header class="card-header">
+								<h2 class="card-title">Manual triggers
+								</h2>
+							</header>
+							<div class="card-block ">
+								<div class="btn-group" dropdown #dropdown="bs-dropdown" [autoClose]="false" [isOpen]="status.isopen" (isOpenChange)="change($event)" placement="top">
+									<button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+										Button dropdown <span class="caret"></span>
+									</button>
+									<ul *dropdownMenu class="dropdown-menu" role="menu">
+										<li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
+										<li role="menuitem"><a class="dropdown-item" href="#">Another action</a>
+										</li>
+										<li role="menuitem"><a class="dropdown-item" href="#">Something else
+											here</a></li>
+											<li class="divider dropdown-divider"></li>
+											<li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>
+											</li>
+										</ul>
+									</div>
+									<button type="button" class="btn btn-primary" (click)="toggleDropdown($event)">Toggle</button>
+									<button type="button" class="btn btn-info" (click)="dropdown.show()">Show</button>
+									<button type="button" class="btn btn-info" (click)="dropdown.hide()">Hide</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<footer id="footer_wrapper" class="footer_wrapper"></footer>

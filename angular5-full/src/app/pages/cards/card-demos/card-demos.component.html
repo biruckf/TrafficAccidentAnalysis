@@ -1,0 +1,69 @@
+<div id="content_wrapper" class="fullWidth1-wrapper">
+	<div class="content">
+		<header class="header-wrapper header-sm">
+			<h1>{{title}}</h1>
+		</header>
+		<div class="content-body">
+			<div class="row">
+				<div class="col-lg-4">
+					<gallery-card [images]="[
+					'/assets/img/headers/header-square-01.jpg',
+					'/assets/img/headers/header-square-02.jpg',
+					'/assets/img/headers/header-square-03.jpg',
+					'/assets/img/headers/header-square-04.jpg',
+					'/assets/img/headers/header-square-05.jpg',
+					'/assets/img/headers/header-square-06.jpg',
+					'/assets/img/headers/header-square-07.jpg',
+					'/assets/img/headers/header-square-08.jpg',
+					'/assets/img/headers/header-square-09.jpg',
+					'/assets/img/headers/header-square-10.jpg',
+					'/assets/img/headers/header-square-11.jpg',
+					'/assets/img/headers/header-square-12.jpg'
+					]" [title]="'Image Gallery'">
+					</gallery-card>
+				</div>
+				<div class="col-lg-4">
+					<image-card [imgPath]="'/assets/img/headers/header-md-09.jpg'" [title]="'Man bun tacos'">
+						<p>Vice deep v bushwick man bun pok pok shoreditch hoodie, neutra everyday carry marfa austin. Tousled portland pok pok helvetica venmo, lyft chartreuse vaporware. Chicharrones fingerstache vice mlkshk. Tilde glossier organic vaporware la croix, kombucha
+							green juice enamel pin. YOLO woke hashtag tacos shoreditch. Poutine tilde lomo cred.</p>
+					</image-card>
+				</div>
+				<div class="col-lg-4">
+					<!--Component data rendered from json file -->
+					<list-card></list-card>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-4">
+					<tabs-over-card [tabColor]="'tabs-info'">
+						<div class="tab-content one">
+							<p>
+								Helvetica letterpress bicycle rights banh mi keffiyeh af. Food truck shabby chic actually mixtape twee. Pabst blog messenger bag, four loko vape post-ironic paleo freegan. Twee raw denim brooklyn cornhole, polaroid cardigan 8-bit cred pinterest biodiesel.
+								Seitan woke vinyl, hoodie fingerstache irony bicycle rights vape sustainable DIY skateboard. Quinoa tumeric venmo, af lyft fashion axe slow-carb.
+							</p>
+						</div>
+						<div class="tab-content two">
+							<p>
+								Schlitz enamel pin neutra succulents bespoke, dreamcatcher tattooed flannel man bun la croix YOLO readymade chicharrones poke. Selfies ramps brooklyn microdosing church-key sustainable, keytar next level chicharrones PBR&B. Mlkshk schlitz whatever, twee
+								wolf godard banh mi try-hard meh bitters irony. Cronut williamsburg shabby chic, typewriter vape skateboard post-ironic lo-fi YOLO shoreditch iceland.
+							</p>
+						</div>
+						<div class="tab-content three">
+							<p>
+								Mlkshk tilde church-key literally jean shorts heirloom. Venmo scenester air plant narwhal ennui, ethical fashion axe small batch raclette bicycle rights asymmetrical 3 wolf moon art party listicle. Street art lo-fi snackwave, cliche chartreuse pug drinking
+								vinegar hashtag pok pok asymmetrical la croix. Tilde distillery meditation waistcoat vaporware, selfies mumblecore schlitz brunch try-hard gluten-free.
+							</p>
+						</div>
+					</tabs-over-card>
+				</div>
+				<div class="col-lg-4">
+					<social-card [title]="'Jeffrey	Murray'" [subtitle]="'Frontend Developer'" [avatarImgPath]="'/assets/img/profiles/18.jpg'" [backgroundImgClass]="'card_img_02'" [postCount]="'420'" [followersCount]="'2.1m'" [followingCount]="'627'"></social-card>
+				</div>
+				<div class="col-lg-4">
+						<weather-card></weather-card>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<footer id="footer_wrapper" class="footer_wrapper"></footer>

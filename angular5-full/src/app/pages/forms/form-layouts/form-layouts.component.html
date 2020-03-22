@@ -1,0 +1,368 @@
+<div id="content_wrapper" class="fullWidth1-wrapper">
+    <div class="content">
+        <header class="header-wrapper header-sm">
+            <h1>Form Layouts</h1>
+        </header>
+        <div class="content-body">
+            <div class="row row-eq-height flex-card">
+                <div class="col-md">
+                    <div class="card">
+                        <header class="card-header">
+                            <h2 class="card-title">Horizontal Form</h2>
+                        </header>
+                        <div class="card-block">
+                            <form class="form-horizontal" name="horizontal">
+                                <div class="form-group row">
+                                    <label class="col-2 col-form-label text-right" for="name">Name:</label>
+                                    <div class="col-10">
+                                        <mat-input-container floatPlaceholder="never" class="float-never">
+                                            <input matInput class="form-control" type="text" name="name" id="name"
+                                                   placeholder="Your Name">
+                                        </mat-input-container>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-2 col-form-label text-right">Align:</label>
+                                    <div class="col-10 p-t-15">
+                                        <mat-radio-group class="m-t-5">
+                                            <mat-radio-button class="m-r-10" value="start" name="checkbox">Start
+                                            </mat-radio-button>
+                                            <mat-radio-button class="m-r-10" value="end" name="checkbox">End
+                                            </mat-radio-button>
+                                        </mat-radio-group>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-2 col-form-label text-right" for="email">Email:</label>
+                                    <div class="col-10">
+                                        <mat-input-container floatPlaceholder="never" class="float-never">
+                                            <input matInput class="form-control" type="email" name="email" id="email"
+                                                   placeholder="@email.com">
+                                        </mat-input-container>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-2 col-form-label text-right" for="textarea">Textarea:</label>
+                                    <div class="col-10">
+                                        <mat-input-container floatPlaceholder="never" class="float-never">
+                                            <textarea matInput class="form-control" name="textarea" id="textarea"
+                                                      placeholder="What's on your mind?"></textarea>
+                                        </mat-input-container>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card-footer text-right">
+                            <button mat-ripple class="btn btn-primary btn-flat">Cancel</button>
+                            <button mat-ripple class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="card">
+                        <header class="card-header">
+                            <h2 class="card-title">Horizontal Form hidden labels</h2>
+                        </header>
+                        <div class="card-block">
+                            <form class="form-horizontal">
+                                <div class="form-group row">
+                                    <label class="sr-only">Your Name: </label>
+                                    <div class="col-md">
+                                        <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                            <input matInput placeholder="Your Name" class="form-control" type="text">
+                                        </mat-input-container>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="sr-only">Align:</label>
+                                    <div class="col-10 p-t-15">
+                                        <mat-radio-group class="m-t-5">
+                                            <mat-radio-button class="m-r-10" value="start" name="checkbox2">Start
+                                            </mat-radio-button>
+                                            <mat-radio-button class="m-r-10" value="end" name="checkbox2">End
+                                            </mat-radio-button>
+                                        </mat-radio-group>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="sr-only">Your Email: </label>
+                                    <div class="col-md">
+                                        <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                            <input matInput placeholder="@email.com" class="form-control" type="email">
+                                        </mat-input-container>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="sr-only">Your Message: </label>
+                                    <div class="col-md">
+                                        <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                            <textarea matInput placeholder="What's on your mind?"
+                                                      class="form-control"></textarea>
+                                        </mat-input-container>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card-footer text-right">
+                            <button mat-ripple class="btn btn-accent btn-flat ">Cancel</button>
+                            <button mat-ripple class="btn btn-accent">Submit</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="card">
+                        <header class="card-header">
+                            <h2 class="card-title">Horizontal Form always float</h2>
+                        </header>
+                        <div class="card-block">
+                            <form class="form-horizontal">
+                                <div class="form-group row">
+                                    <label class="sr-only">Your Name: </label>
+                                    <div class="col-md">
+                                        <mat-input-container floatPlaceholder="always" class="float-always">
+                                            <input matInput placeholder="Your Name" class="form-control" type="text">
+                                        </mat-input-container>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="sr-only">Align:</label>
+                                    <div class="col-10 p-t-15">
+                                        <mat-radio-group class="m-t-5">
+                                            <mat-radio-button class="m-r-10" value="start" name="checkbox2">Start
+                                            </mat-radio-button>
+                                            <mat-radio-button class="m-r-10" value="end" name="checkbox2">End
+                                            </mat-radio-button>
+                                        </mat-radio-group>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="sr-only">Your Email: </label>
+                                    <div class="col-md">
+                                        <mat-input-container floatPlaceholder="always" class="float-always">
+                                            <input matInput placeholder="@email.com" class="form-control" type="email">
+                                        </mat-input-container>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="sr-only">Your Message: </label>
+                                    <div class="col-md">
+                                        <mat-input-container floatPlaceholder="always" class="float-always">
+                                            <textarea matInput placeholder="What's on your mind?"
+                                                      class="form-control"></textarea>
+                                        </mat-input-container>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card-footer text-right">
+                            <button mat-ripple class="btn btn-info btn-flat ">Cancel</button>
+                            <button mat-ripple class="btn btn-info">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-eq-height flex-card">
+                <div class="col-md">
+                    <div class="card">
+                        <header class="card-header">
+                            <h2 class="card-title">Inline Form with labels</h2>
+                        </header>
+                        <div class="card-block">
+                            <form class="form-inline" name="">
+                                <div class="form-group">
+                                    <label class="mr-sm-2" for="">Username:</label>
+                                    <mat-input-container floatPlaceholder="never" class="float-never">
+                                        <input matInput class="form-control mb-2 mr-sm-2 mb-sm-0" type="text" name=""
+                                               id="" placeholder="Username">
+                                    </mat-input-container>
+                                </div>
+                                <div class="form-group">
+                                    <label class="mr-sm-2" for="">Password:</label>
+                                    <mat-input-container floatPlaceholder="never" class="float-never">
+                                        <input matInput class="form-control mb-2 mr-sm-2 mb-sm-0" type="password"
+                                               name="" id="" placeholder="Password">
+                                    </mat-input-container>
+                                </div>
+                                <div class="form-group">
+                                    <button mat-ripple class="btn btn-info">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="card">
+                        <header class="card-header">
+                            <h2 class="card-title">Inline Form with labels &amp; addons</h2>
+                        </header>
+                        <div class="card-block">
+                            <form class="form-inline" name="">
+                                <div class="form-group">
+                                    <label class="sr-only" for="">Username:</label>
+                                    <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                        <input matInput class="form-control mb-2 mr-sm-2 mb-sm-0" type="text" name=""
+                                               id="" placeholder="Username">
+                                    </mat-input-container>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="">Password:</label>
+                                    <mat-input-container floatPlaceholder="auto" class="float-auto">
+                                        <input matInput class="form-control mb-2 mr-sm-2 mb-sm-0" type="password"
+                                               name="" id="" placeholder="Password">
+                                    </mat-input-container>
+                                </div>
+                                <div class="form-group">
+                                    <button mat-ripple class="btn btn-blue btn-fab animate-fab btn-fab-sm"><i
+                                            class="zmdi zmdi-mail-send"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-eq-height flex-card">
+                <div class="col-md">
+                    <div class="card">
+                        <header class="card-header">
+                            <h2 class="card-title">Vertical Form</h2>
+                        </header>
+                        <div class="card-block">
+                            <form class="form-vertical">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1" class="m-0 p-0">Email address:</label>
+                                    <mat-input-container floatPlaceholder="never" class="float-never col-12 p-0">
+                                        <input matInput class="form-control col" type="text" name="exampleInputEmail1"
+                                               id="exampleInputEmail1" placeholder="Your Email Address">
+                                    </mat-input-container>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1" class="m-0 p-0">Password:</label>
+                                    <mat-input-container floatPlaceholder="never" class="float-never col-12 p-0">
+                                        <input matInput class="form-control col" type="password"
+                                               name="exampleInputPassword1" id="exampleInputPassword1"
+                                               placeholder="Your Password">
+                                    </mat-input-container>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleTextarea" class="m-0 p-0">Example textarea</label>
+                                    <mat-input-container floatPlaceholder="never" class="float-never col-12 p-0">
+                                        <textarea matInput class="form-control" name="exampleTextarea"
+                                                  id="exampleTextarea" placeholder="What's on your mind?"></textarea>
+                                    </mat-input-container>
+                                </div>
+                                <div class="form-group">
+                                    <mat-radio-group class="example-radio-group" name="example-radio-button"
+                                                    [(ngModel)]="favoriteSeason">
+                                        <mat-radio-button class="example-radio-button" *ngFor="let season of seasons"
+                                                         [value]="season">
+                                            {{season}}
+                                        </mat-radio-button>
+                                    </mat-radio-group>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card-footer text-right">
+                            <button mat-ripple class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="card">
+                        <header class="card-header">
+                            <h2 class="card-title">Vertical Form hidden labels</h2>
+                        </header>
+                        <div class="card-block">
+                            <form class="form-vertical">
+                                <div class="form-group">
+                                    <label class="sr-only">Email address:</label>
+                                    <mat-input-container floatPlaceholder="auto" class="float-auto col-12 p-0">
+                                        <input matInput class="form-control col" type="text" name="exampleInputEmail2"
+                                               id="exampleInputEmail2" placeholder="Your Email Address">
+                                    </mat-input-container>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only">Password:</label>
+                                    <mat-input-container floatPlaceholder="auto" class="float-auto col-12 p-0">
+                                        <input matInput class="form-control col" type="password"
+                                               name="exampleInputPassword2" id="exampleInputPassword2"
+                                               placeholder="Your Password">
+                                    </mat-input-container>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="sr-only">Example textarea</label>
+                                    <mat-input-container floatPlaceholder="auto" class="float-auto col-12 p-0">
+                                        <textarea matInput class="form-control" name="exampleTextarea2"
+                                                  id="exampleTextarea2" placeholder="What's on your mind?"></textarea>
+                                    </mat-input-container>
+                                </div>
+                                <div class="form-group">
+                                    <mat-radio-group class="example-radio-group" name="example-radio-button"
+                                                    [(ngModel)]="favoriteMonth">
+                                        <mat-radio-button class="example-radio-button" *ngFor="let month of months"
+                                                         [value]="month">
+                                            {{month}}
+                                        </mat-radio-button>
+                                    </mat-radio-group>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card-footer text-right">
+                            <button mat-ripple class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="card">
+                        <header class="card-header">
+                            <h2 class="card-title">Vertical Form always float</h2>
+                        </header>
+                        <div class="card-block">
+                            <form class="form-vertical">
+                                <div class="form-group">
+                                    <label class="sr-only">Email address:</label>
+                                    <mat-input-container floatPlaceholder="always" class="float-always col-12 p-0">
+                                        <input matInput class="form-control col" type="text" name="exampleInputEmail3"
+                                               id="exampleInputEmail3" placeholder="Your Email Address">
+                                    </mat-input-container>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only">Password:</label>
+                                    <mat-input-container floatPlaceholder="always" class="float-always col-12 p-0">
+                                        <input matInput class="form-control col" type="password"
+                                               name="exampleInputPassword3" id="exampleInputPassword3"
+                                               placeholder="Your Password">
+                                    </mat-input-container>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="sr-only">Example textarea</label>
+                                    <mat-input-container floatPlaceholder="always" class="float-always col-12 p-0">
+                                        <textarea matInput class="form-control" name="exampleTextarea3"
+                                                  id="exampleTextarea3" placeholder="What's on your mind?"></textarea>
+                                    </mat-input-container>
+                                </div>
+                                <div class="form-group">
+                                    <mat-radio-group class="example-radio-group" name="example-radio-button"
+                                                    [(ngModel)]="favoriteYear">
+                                        <mat-radio-button class="example-radio-button" *ngFor="let year of years"
+                                                         [value]="year">
+                                            {{year}}
+                                        </mat-radio-button>
+                                    </mat-radio-group>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card-footer text-right">
+                            <button mat-ripple class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer id="footer_wrapper" class="footer_wrapper"></footer>

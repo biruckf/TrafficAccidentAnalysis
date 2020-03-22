@@ -1,0 +1,34 @@
+<div id="content_wrapper" class="boxedlayout2-wrapper">
+	<div class="content content-full">
+		<div class="content-body">
+			<mat-sidenav-container class="example-container">
+			  <mat-sidenav #sidenav [mode]="mode.value">
+					<div style="min-width:220px;">
+						
+					</div>
+			  </mat-sidenav>
+			  <mat-sidenav-content>
+					<div class="row">
+						<div class="col">
+							<div class="card m-50">
+								<div class="card-body">
+									<p><button class="btn btn-info" (click)="sidenav.toggle()">Toggle Sidenav</button></p>
+									<p>
+										<mat-radio-group class="example-radio-group" [formControl]="mode">
+											<label>Mode:</label>
+											<mat-radio-button value="over">Over</mat-radio-button>
+											<mat-radio-button value="side">Side</mat-radio-button>
+											<mat-radio-button value="push">Push</mat-radio-button>
+										</mat-radio-group>
+									</p>
+								</div>
+								</div>
+						</div>
+					</div>
+
+						
+			  </mat-sidenav-content>
+			</mat-sidenav-container>
+		</div>
+	</div>
+</div>

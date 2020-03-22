@@ -1,0 +1,472 @@
+<!-- Content Wrapper - right Sidenav 2-->
+<div id="content_wrapper" class="rightSidenav2-wrapper">
+    <!--// Sidenav component container-->
+    <mat-sidenav-container class="sidenav-container">
+        <!-- Sidenav -->
+        <mat-sidenav #leftSidenav2 mode="{{navModeLeft}}" class="sidenav profile">
+            <aside id="leftSidenav2">
+                <div class="card profile-menu">
+                    <header class="card-header card-img alt-heading">
+                        <div class="profile"><img src="assets/img/profiles/02.jpg" alt=""
+                                                  class="rounded-circle max-w-75"></div>
+                        <a href="javascript:void(0)" class="info" data-profile="open-menu"><span>mikejones@materialwrap.com</span></a>
+                    </header>
+                    <div class="card-block">
+                        <nav class="submenu accounts">
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0)" class="font-size-12">
+                                        <div class="switch">developer</div>
+                                        developer@materialwrap.com</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" class="font-size-12">
+                                        <div class="switch">admin</div>
+                                        admin@materialwrap.com</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" class="font-size-12">
+                                        <div class="switch">hello</div>
+                                        hello@materialwrap.com</a>
+                                </li>
+                                <li><a href="javascript:void(0)" class="p-b-15"><i class="zmdi zmdi-settings"></i>Manage
+                                    Accounts</a></li>
+                                <li class="divider"></li>
+                            </ul>
+                        </nav>
+                        <nav class="submenu">
+                            <ul>
+                                <li mat-ripple><a href="javascript:void(0)"><i class="zmdi zmdi-folder"></i> My
+                                    Files</a></li>
+                                <li mat-ripple><a href="javascript:void(0)"><i class="zmdi zmdi-accounts-alt"></i>
+                                    Shared with me</a></li>
+                                <li mat-ripple><a href="javascript:void(0)"><i class="zmdi zmdi-time"></i> Recent</a>
+                                </li>
+                                <li mat-ripple><a href="javascript:void(0)"><i class="zmdi zmdi-star"></i> Starred</a>
+                                </li>
+                                <li mat-ripple><a href="javascript:void(0)"><i class="zmdi zmdi-delete"></i> Trash</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li mat-ripple><a href="javascript:void(0)"><i class="zmdi zmdi-cloud"></i> Backups</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li class="title">12 GB of 100 GB used</li>
+                                <li mat-ripple><a href="javascript:void(0)"><i class="zmdi zmdi-storage"></i> Upgrade
+                                    storage</a></li>
+                            </ul>
+                            <nav>
+                            </nav>
+                        </nav>
+                    </div>
+                </div>
+            </aside>
+        </mat-sidenav>
+        <!-- /END Sidenav -->
+        <!-- Page Content -->
+        <div class="content">
+            <div class="header-wrapper header-md">
+                <header class="container-fluid">
+                    <div class="row">
+                        <div class="col">
+                            <h1 class="m-l-30">File Manager</h1>
+                        </div>
+                    </div>
+                </header>
+                <ul class="actions icons top-left">
+                    <li>
+                        <a href="javascript:void(0)" (click)="leftSidenav2.toggle()">
+                            <i class="zmdi zmdi-menu"></i>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="actions icons top-right">
+                    <li>
+                        <a href="javascript:void(0)">
+                            <i class="zmdi zmdi-search"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <i class="zmdi zmdi-view-list-alt"></i>
+                        </a>
+                    </li>
+                    <li>
+                    <li>
+                        <a href="javascript:void(0)" (click)="rightSidenav2.toggle()">
+                            <i class="zmdi zmdi-info"></i>
+                        </a>
+                    </li>
+                </ul>
+                <div class="actions fab bottom-right">
+                    <smd-fab-speed-dial [(open)]="open" [direction]="direction" [animationMode]="animationMode"
+                                        [fixed]="fixed">
+                        <smd-fab-trigger [spin]="spin">
+                            <button mat-fab (click)="_click('trigger')">
+                                <mat-icon>add</mat-icon>
+                            </button>
+                        </smd-fab-trigger>
+                        <smd-fab-actions>
+                            <button mat-mini-fab (click)="_click('action1')">
+                                <mat-icon>create_new_folder</mat-icon>
+                            </button>
+                            <button mat-mini-fab (click)="_click('action2')">
+                                <mat-icon>cloud_upload</mat-icon>
+                            </button>
+                            <button mat-mini-fab (click)="_click('action3')">
+                                <mat-icon>file_upload</mat-icon>
+                            </button>
+                            <button mat-mini-fab (click)="_click('action4')">
+                                <mat-icon>insert_drive_file</mat-icon>
+                            </button>
+                        </smd-fab-actions>
+                    </smd-fab-speed-dial>
+                </div>
+            </div>
+            <div class="content-body">
+                <section id="folder-manage" class="m-t-30">
+                    <h3>Folders</h3>
+                    <ul class="folders">
+                        <li>
+                            <div class="card card-folder card-item" data-item-selected="false" data-item-type="Folder"
+                                 data-item-size="72 KB" data-item-location="Projects" data-item-modified="Jan 3, 2017"
+                                 data-item-opened="Jan 5, 2017" data-item-created="Jan 1, 2017"
+                                 data-item-offline="true">
+                                <div class="card-header">
+                                    <i class="zmdi zmdi-folder"></i>
+                                </div>
+                                <div class="card-block">
+                                    <span class="title">App Design Assets</span>
+                                </div>
+                                <div class="card-footer">
+                                    <i class="zmdi zmdi-info"></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="card card-folder card-item" data-item-selected="false" data-item-type="Folder"
+                                 data-item-size="22 KB" data-item-location="Projects" data-item-modified="Jan 3, 2017"
+                                 data-item-opened="Jan 23, 2017" data-item-created="Jan 5, 2017"
+                                 data-item-offline="false">
+                                <div class="card-header">
+                                    <i class="zmdi zmdi-folder"></i>
+                                </div>
+                                <div class="card-block">
+                                    <span class="title">Client Documents</span>
+                                </div>
+                                <div class="card-footer">
+                                    <i class="zmdi zmdi-info"></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="card card-folder card-item" data-item-selected="false" data-item-type="Folder"
+                                 data-item-size="54 KB" data-item-location="Projects" data-item-modified="Jan 9, 2017"
+                                 data-item-opened="Jan 11, 2017" data-item-created="Jan 3, 2017"
+                                 data-item-offline="true">
+                                <div class="card-header">
+                                    <i class="zmdi zmdi-folder"></i>
+                                </div>
+                                <div class="card-block">
+                                    <span class="title">Mockups</span>
+                                </div>
+                                <div class="card-footer">
+                                    <i class="zmdi zmdi-info"></i>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+                <section id="file-manager">
+                    <h3>Files</h3>
+                    <ul class="files">
+                        <li>
+                            <div class="card card-file card-item" data-item-selected="true" data-item-type="Image"
+                                 data-item-size="2 MB" data-item-location="Projects" data-item-modified="Feb 9, 2017"
+                                 data-item-opened="Feb 11, 2017" data-item-created="Feb 3, 2017"
+                                 data-item-offline="true"
+                                 data-item-image="assets/img/gallery/thumbs/thumb-1.jpg">
+                                <div class="card-block">
+                                    <img src="assets/img/gallery/thumbs/thumb-1.jpg" alt=""/>
+                                </div>
+                                <div class="card-footer">
+                                    <i class="zmdi zmdi-image"></i>
+                                    <span class="title">thumb-1.jpg</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="card card-file card-item" data-item-selected="false" data-item-type="Image"
+                                 data-item-size="3 MB" data-item-location="Projects" data-item-modified="Mar 19, 2017"
+                                 data-item-opened="Mar 21, 2017" data-item-created="Mar 9, 2017"
+                                 data-item-offline="false"
+                                 data-item-image="assets/img/gallery/thumbs/thumb-2.jpg">
+                                <div class="card-block">
+                                    <img src="assets/img/gallery/thumbs/thumb-2.jpg" alt=""/>
+                                </div>
+                                <div class="card-footer">
+                                    <i class="zmdi zmdi-image"></i>
+                                    <span class="title">thumb-2.jpg</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="card card-file card-item" data-item-selected="false" data-item-type="Image"
+                                 data-item-size="4 MB" data-item-location="Projects" data-item-modified="Jan 9, 2017"
+                                 data-item-opened="Jan 12, 2017" data-item-created="Jan 3, 2017"
+                                 data-item-offline="true"
+                                 data-item-image="assets/img/gallery/thumbs/thumb-3.jpg">
+                                <div class="card-block">
+                                    <img src="assets/img/gallery/thumbs/thumb-3.jpg" alt=""/>
+                                </div>
+                                <div class="card-footer">
+                                    <i class="zmdi zmdi-image"></i>
+                                    <span class="title">thumb-3.jpg</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="card card-file card-item" data-item-selected="false" data-item-type="Image"
+                                 data-item-size="3 MB" data-item-location="Projects" data-item-modified="Feb 19, 2017"
+                                 data-item-opened="Feb 22, 2017" data-item-created="Jan 12, 2017"
+                                 data-item-offline="true"
+                                 data-item-image="assets/img/gallery/thumbs/thumb-4.jpg">
+                                <div class="card-block">
+                                    <img src="assets/img/gallery/thumbs/thumb-4.jpg" alt=""/>
+                                </div>
+                                <div class="card-footer">
+                                    <i class="zmdi zmdi-image"></i>
+                                    <span class="title">thumb-4.jpg</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="card card-file card-item selected" data-item-selected="false"
+                                 data-item-type="Image" data-item-size="3 MB" data-item-location="Projects"
+                                 data-item-modified="Mar 9, 2017" data-item-opened="Mar 11, 2017"
+                                 data-item-created="Mar 3, 2017" data-item-offline="true"
+                                 data-item-image="assets/img/gallery/thumbs/thumb-5.jpg">
+                                <div class="card-block">
+                                    <img src="assets/img/gallery/thumbs/thumb-5.jpg" alt=""/>
+                                </div>
+                                <div class="card-footer">
+                                    <i class="zmdi zmdi-image"></i>
+                                    <span class="title">thumb-5.jpg</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="card card-file card-item" data-item-selected="false" data-item-type="Image"
+                                 data-item-size="2 MB" data-item-location="Projects" data-item-modified="Feb 9, 2017"
+                                 data-item-opened="Feb 11, 2017" data-item-created="Feb 3, 2017"
+                                 data-item-offline="false"
+                                 data-item-image="assets/img/gallery/thumbs/thumb-6.jpg">
+                                <div class="card-block">
+                                    <img src="assets/img/gallery/thumbs/thumb-6.jpg" alt=""/>
+                                </div>
+                                <div class="card-footer">
+                                    <i class="zmdi zmdi-image"></i>
+                                    <span class="title">thumb-6.jpg</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="card card-file card-item" data-item-selected="false" data-item-type="Image"
+                                 data-item-size="2 MB" data-item-location="Projects" data-item-modified="Mar 9, 2017"
+                                 data-item-opened="Mar 11, 2017" data-item-created="Mar 3, 2017"
+                                 data-item-offline="true"
+                                 data-item-image="assets/img/gallery/thumbs/thumb-7.jpg">
+                                <div class="card-block">
+                                    <img src="assets/img/gallery/thumbs/thumb-7.jpg" alt=""/>
+                                </div>
+                                <div class="card-footer">
+                                    <i class="zmdi zmdi-image"></i>
+                                    <span class="title">thumb-7.jpg</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="card card-file card-item" data-item-selected="false" data-item-type="Image"
+                                 data-item-size="3 MB" data-item-location="Projects" data-item-modified="Feb 22, 2017"
+                                 data-item-opened="Feb 23, 2017" data-item-created="Jan 3, 2017"
+                                 data-item-offline="true"
+                                 data-item-image="assets/img/gallery/thumbs/thumb-8.jpg">
+                                <div class="card-block">
+                                    <img src="assets/img/gallery/thumbs/thumb-8.jpg" alt=""/>
+                                </div>
+                                <div class="card-footer">
+                                    <i class="zmdi zmdi-image"></i>
+                                    <span class="title">thumb-8.jpg</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="card card-file card-item" data-item-selected="false" data-item-type="Image"
+                                 data-item-size="6 MB" data-item-location="Projects" data-item-modified="Mar 9, 2017"
+                                 data-item-opened="Feb 11, 2017" data-item-created="Jan 3, 2017"
+                                 data-item-offline="false"
+                                 data-item-image="assets/img/gallery/thumbs/thumb-9.jpg">
+                                <div class="card-block">
+                                    <img src="assets/img/gallery/thumbs/thumb-9.jpg" alt=""/>
+                                </div>
+                                <div class="card-footer">
+                                    <i class="zmdi zmdi-image"></i>
+                                    <span class="title">thumb-9.jpg</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="card card-file card-item" data-item-selected="false" data-item-type="Image"
+                                 data-item-size="4 MB" data-item-location="Projects" data-item-modified="Feb 19, 2017"
+                                 data-item-opened="Jan 21, 2017" data-item-created="Jan 13, 2017"
+                                 data-item-offline="true"
+                                 data-item-image="assets/img/gallery/thumbs/thumb-10.jpg">
+                                <div class="card-block">
+                                    <img src="assets/img/gallery/thumbs/thumb-10.jpg" alt=""/>
+                                </div>
+                                <div class="card-footer">
+                                    <i class="zmdi zmdi-image"></i>
+                                    <span class="title">thumb-10.jpg</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+        <!-- Sidenav -->
+        <mat-sidenav #rightSidenav2 mode="{{navModeRight}}" align="end" class="sidenav lg">
+            <aside id="rightSidenav2">
+                <h3 id="item-title"><i class="zmdi zmdi-image mw-blue-text"></i> <span class="title">thumb-5.jpg</span>
+                </h3>
+                <mat-tab-group class="right-tab-group">
+                    <mat-tab label="Details">
+                        <div class="tab-content">
+                            <figure id="current-img"><img src="assets/img/gallery/full/full-5.jpg"></figure>
+                            <ul id="item-details" class="style-none border-grey-top-1px border-grey-bottom-1px p-15">
+                                <li id="type"><span class="title">Type</span><span class="info">Image</span></li>
+                                <li id="location"><span class="title">Location</span><span class="info">Projects</span>
+                                </li>
+                                <li id="modified"><span class="title">Modified</span><span
+                                        class="info">Aug 9, 2017</span></li>
+                                <li id="opened"><span class="title">Opened</span><span class="info">Aug 11, 2017</span>
+                                </li>
+                                <li id="created"><span class="title">Created</span><span class="info">Aug 3, 2017</span>
+                                </li>
+                            </ul>
+                            <ul id="item-desc" class="style-none p-15">
+                                <li><span class="title">Add a description</span><a href="javascript:void(0)"
+                                                                                   class="float-right"><i
+                                        class="zmdi zmdi-edit"></i></a></li>
+                            </ul>
+                        </div>
+                    </mat-tab>
+                    <mat-tab label="Activity">
+                        <div class="tab-content p-20">
+                            <h6>Yesterday</h6>
+                            <div class="card">
+                                <div class="card-block">
+                                    <ul class="list-group ">
+                                        <li class="list-group-item ">
+                                            <span class="profile-img"><img src="assets/img/profiles/02.jpg" alt=""
+                                                                           class="rounded-circle max-w-40 m-r-10"></span>
+                                            <div class="list-group-item-body">
+                                                <div class="list-group-item-heading">You uploaded an item</div>
+                                                <div class="font-size-10 list-group-item-time">Mon 7:11 AM</div>
+                                                <ul class="file-activity">
+                                                    <li>
+                                                        <i class="zmdi zmdi-language-javascript md-text-amber"></i>
+                                                        <span>sidebar-overlay.js</span>
+                                                    </li>
+                                                    <li>
+                                                        <i class="zmdi zmdi-language-javascript md-text-amber"></i>
+                                                        <span>bundle.min.js</span>
+                                                    </li>
+                                                    <li>
+                                                        <i class="zmdi zmdi-language-javascript md-text-amber"></i>
+                                                        <span>offline.js</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-block">
+                                    <ul class="list-group ">
+                                        <li class="list-group-item ">
+                                            <span class="profile-img"><img src="assets/img/profiles/02.jpg" alt=""
+                                                                           class="rounded-circle max-w-40 m-r-10"></span>
+                                            <div class="list-group-item-body">
+                                                <div class="list-group-item-heading">You uploaded 15 items</div>
+                                                <div class="font-size-10 list-group-item-time">Mon 7:00 AM</div>
+                                                <ul class="file-activity">
+                                                    <li>
+                                                        <i class="zmdi zmdi-file-text mw-blue-text"></i> <span>app-mail.html</span>
+                                                    </li>
+                                                    <li>
+                                                        <i class="zmdi zmdi-file-text mw-blue-text"></i> <span>app-notes.html</span>
+                                                    </li>
+                                                    <li>
+                                                        <i class="zmdi zmdi-file-text mw-blue-text"></i> <span>app-calendar.html</span>
+                                                    </li>
+                                                    <li>
+                                                        <i class="zmdi zmdi-file-text mw-blue-text"></i> <span>app-contacts.html</span>
+                                                    </li>
+                                                    <li>
+                                                        <i class="zmdi zmdi-file-text mw-blue-text"></i> <span>app-taskboard.html</span>
+                                                    </li>
+                                                    <li>
+                                                        <i class="zmdi zmdi-file-text mw-blue-text"></i> <span>charts-c3.html</span>
+                                                    </li>
+                                                    <li>
+                                                        <i class="zmdi zmdi-file-text mw-blue-text"></i> <span>sidebar-overlay.html</span>
+                                                    </li>
+                                                    <li>
+                                                        <i class="zmdi zmdi-file-text mw-blue-text"></i> <span>form-layouts.html</span>
+                                                    </li>
+                                                    <li>
+                                                        <i class="zmdi zmdi-file-text mw-blue-text"></i> <span>form-validation.html</span>
+                                                    </li>
+                                                    <li>
+                                                        <i class="zmdi zmdi-file-text mw-blue-text"></i> <span>form-wizard.html</span>
+                                                    </li>
+                                                    <li>
+                                                        <i class="zmdi zmdi-file-text mw-blue-text"></i> <span>bundle.html</span>
+                                                    </li>
+                                                    <li>
+                                                        <i class="zmdi zmdi-file-text mw-blue-text"></i> <span>charts-morris.html</span>
+                                                    </li>
+                                                    <li>
+                                                        <i class="zmdi zmdi-file-text mw-blue-text"></i> <span>page-profile.html</span>
+                                                    </li>
+                                                    <li>
+                                                        <i class="zmdi zmdi-file-text mw-blue-text"></i> <span>page-timeline.html</span>
+                                                    </li>
+                                                    <li>
+                                                        <i class="zmdi zmdi-file-text mw-blue-text"></i> <span>ui-alerts.html</span>
+                                                    </li>
+
+                                                </ul>
+
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="javascript:void(0)" class="btn btn-default btn-flat btn-block m-b-0"
+                                       data-files="show-all">Show all</a>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-tab>
+                </mat-tab-group>
+            </aside>
+        </mat-sidenav>
+        <!-- /END Sidenav -->
+        <!--  Footer Wrapper -->
+        <footer id="footer_wrapper" class="footer_wrapper"></footer>
+    </mat-sidenav-container>
+    <!-- /END Sidenav component container -->
+</div>
+<!-- /END Content Wrapper - right Sidenav 2-->

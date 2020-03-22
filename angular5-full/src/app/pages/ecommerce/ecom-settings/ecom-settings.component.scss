@@ -1,0 +1,24 @@
+:host /deep/ {
+	.header-wrapper {
+		background-image: url("/assets/img/ecom/ecom-header.jpg") !important;
+		padding: 10px 20px;
+		background-size: cover;
+		background-position: 0 45% !important;
+	}
+
+	.syntax-highlighter {
+		display: none;
+	}
+
+	:not(pre) > code[class*=language-],
+	pre[class*=language-] {
+		background: #222f3c;
+	}
+	pre code {
+		white-space: pre-line !important;
+	}
+
+	code {
+		border-radius: 4px;
+	}
+}

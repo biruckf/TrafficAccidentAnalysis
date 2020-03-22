@@ -1,0 +1,265 @@
+<!-- Content Wrapper - right Sidenav 2-->
+<div id="content_wrapper" class="rightSidenav2-wrapper">
+    <!--// Sidenav component container-->
+    <mat-sidenav-container class="sidenav-container">
+        <!-- Page Content -->
+        <div class="content">
+            <!-- this creates a google map on the page with the given lat/lng from -->
+            <!-- the component as the initial center of the map: -->
+            <agm-map [latitude]="lat" [longitude]="lng">
+                <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+            </agm-map>
+
+        </div>
+        <!-- Sidenav -->
+        <mat-sidenav #rightSidenav2 mode="{{navMode}}" align="end" class="sidenav lg">
+            <aside id="rightSidenav2">
+                <header class="header app_primary_bg">
+                    <ul class="actions icons top-left">
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="zmdi zmdi-search text-white"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <h2 class="header-title text-white font-weight-600 alt-h2 m-l-40 m-t-5">Starbucks, Seattle</h2>
+                    <ul class="actions icons top-right">
+                        <li class="dropdown" dropdown>
+                            <a href="javascript:void(0)" *dropdownToggle>
+                                <i class="zmdi zmdi-more-vert text-white"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-right btn-primary" *dropdownMenu>
+                                <li>
+                                    <a href="javascript:void(0)">Map details</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Copy Map</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Print Map</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Zoom to viewport</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Download KML</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </header>
+                <nav class="submenu">
+                    <ul>
+
+
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Downtown: Columbia
+                            Center</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Downtown: Pioneer
+                            Square</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Downtown: 5th Ave</a>
+                        </li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Downtown: One Union
+                            Square</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Downtown: Fourth &amp;
+                            Seneca</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Pike Place</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Metropolitan Park</a>
+                        </li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Downtown: 3rd Ave</a>
+                        </li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Downtown: Pine &amp;
+                            7th</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Downtown: 2nd Ave</a>
+                        </li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Downtown: Swedish
+                            Medical Center</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Downtown: Starbucks
+                            Coffee</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Downtown: Plaza 600
+                            Building</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Central District: 23d
+                            &amp; Jackson</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Downtown: Puget Sound
+                            Plaza</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Downtown: Madison</a>
+                        </li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Downtown: 4th &amp;
+                            Occidental</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Belltown(?): 23rd
+                            &amp; 1st</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Downtown: Alaskan Way</a>
+                        </li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Central District: 22nd
+                            &amp; Madison</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Mt. Baker: 29th &amp;
+                            MLK</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> S Lake Union: 12th
+                            &amp; Dexter</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Capitol Hill: 16th
+                            &amp; Olive</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> West Seattle: Alki Ave</a>
+                        </li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Downtown: Seattle
+                            Trust</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Downtown: 2nd Ave</a>
+                        </li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Downtown: 5th &amp;
+                            Pine</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Downtown: 3rd Ave</a>
+                        </li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Rainier Valley:
+                            Rainier Plaza Shopping Center</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Madison Park: 40th
+                            &amp; Madison</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Madrona: Lakeside Ave</a>
+                        </li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> First Hill: 12th &amp;
+                            Columbia</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Downtown: 5th Ave</a>
+                        </li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Rainier Valley: 48th
+                            &amp; Rainier</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Downtown: Pacific
+                            Place</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Capitol Hill: Broadway</a>
+                        </li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Queen Anne: Queen Anne
+                            Ave</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Downtown: 6th &amp;
+                            Denny</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Int D: 1st Ave</a>
+                        </li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> S Lake Union: Westlake
+                            Ave</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Wallingford: 45th
+                            St</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Georgetown: Corson Ave</a>
+                        </li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Capitol Hill: 15th Ave</a>
+                        </li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Downtown: 1st Ave</a>
+                        </li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Downtown: Alaskan Way</a>
+                        </li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Univ D: 45th &amp;
+                            University Way</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Downtown: 4th &amp;
+                            Blanchard</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Queen Anne: Queen Anne
+                            Ave</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Downtown: 3rd Ave</a>
+                        </li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Downtown: Century
+                            Square Kiosk</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Ravenna: 64th &amp;
+                            12th</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Queen Anne: Elliott
+                            Ave</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> West Seattle: 41st
+                            &amp; Admiral</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Downtown: 7th Ave</a>
+                        </li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Phinney Ridge: 67th St</a>
+                        </li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Northgate: Northgate
+                            Way</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Downtown: Seattle
+                            Center Kiosk</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Queen Anne: Dravus St</a>
+                        </li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Downtown: Terry
+                            Ave</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Magnolia: McGraw
+                            St</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Univ D: U Village</a>
+                        </li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> West Seattle:
+                            Fauntleroy</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Univ D: 41st &amp;
+                            University Way</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Ballard: 22nd &amp;
+                            Market</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Green Lake: 71st &amp;
+                            Green Lake</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> West Seattle:
+                            California &amp; Fauntleroy</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Crown Hill: Holman Rd</a>
+                        </li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Eastlake: 23rd &amp;
+                            Eastlake</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Fremont: 34th &amp;
+                            Fremont</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Downtown: 6th &amp;
+                            Union</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> West Seattle: 26th
+                            &amp; California Ave SW</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Wedgewood: 73rd &amp;
+                            35th</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Queen Anne: 11th Ave
+                            NW</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Rainier Valley</a>
+                        </li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Lake City: 120th &amp;
+                            Lake City Way</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Northgate: Northgate
+                            Mall</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Northgate: Northgate
+                            Way</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Downtown: King St</a>
+                        </li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Capitol Hill: 14th
+                            &amp; Broadway</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Ballard: NW Market St</a>
+                        </li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Central District:
+                            James Tower</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Capitol Hill: 14th
+                            &amp; John</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Haller Lake: 130th
+                            &amp; Aurora</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Crown Hill: 15th Ave
+                            NW</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Queen Anne: 1st Ave W</a>
+                        </li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Mt. Baker: 27th &amp;
+                            Rainier</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Fremont: NW 45th
+                            St</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Harbor Island: SW
+                            Klickitat</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Arbor Heights: 28th
+                            Ave SW</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Montlake: 38th &amp;
+                            Montlake Blvd</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Lake City: 143rd &amp;
+                            Lake City Way</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Greenwood: 87th &amp;
+                            Greenwood</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Univ D: University
+                            Village</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Int Dist: 24th &amp;
+                            Utah</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Downtown: 5th St</a>
+                        </li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Downtown: Us Bank
+                            Centre Store</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Downtown: Us Bank
+                            Centre Kiosk</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Downtown: Jackson</a>
+                        </li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Downtown: 1st &amp;
+                            Marion</a></li>
+                        <li><a mat-ripple href="javascript:void(0)"><i class="zmdi zmdi-pin"></i> Queen Anne: Seattle
+                            Trust</a></li>
+
+                    </ul>
+                </nav>
+            </aside>
+        </mat-sidenav>
+        <!-- /END Sidenav -->
+        <!--  Footer Wrapper -->
+        <footer id="footer_wrapper" class="footer_wrapper"></footer>
+    </mat-sidenav-container>
+    <!-- /END Sidenav component container -->
+</div>
+<!-- /END Content Wrapper - right Sidenav 2-->

@@ -1,0 +1,129 @@
+@import "../../../../shared/styles/main/util/index";
+.card.schedule-caard{
+	.curr-date {
+		margin: 15px 21px 33px 10px;
+		font-size: 1.4em;
+		left: 10px;
+		position: absolute;
+	}
+
+	.card-header {
+		padding: 0;
+		position: relative;
+		height: 150px;
+		width: 100%;
+		background-image: url("/assets/img/headers/header-md-03.jpg");
+		background-repeat: no-repeat;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		background-position: center;
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background: darken($mw_purple, 10%);
+			opacity: 0.8;
+		}
+		.actions.fab-action{
+			right: 20px;
+    bottom: 3px;
+		}
+	}
+
+	.week-container {
+		padding: 5px 20px;
+	}
+
+	ul.week {
+		display: block;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+
+		&.top {
+			margin-top: 10px;
+		}
+
+		&.bottom {
+			margin-top: -10px;
+		}
+	}
+
+	li.day {
+		display: inline-block;
+		width: 13%;
+		height: 0;
+		padding: 0 0 13%;
+		font-weight: 300;
+		box-sizing: border-box;
+		position: relative;
+	}
+
+	li.day.current {
+		background-color: #eef5f9;
+		border-radius: 50%;
+	}
+
+	li.day span {
+		display: block;
+		text-align: center;
+		width: 100%;
+		font-size: 14px;
+		position: absolute;
+		top: 50%;
+		margin-top: -7px;
+	}
+
+	li.day.day-names span {
+		letter-spacing: 1px;
+		text-transform: uppercase;
+	}
+
+	.point::after {
+		width: 4px;
+		height: 4px;
+		background-color: #fc3768;
+		content: '';
+		position: absolute;
+		bottom: 15%;
+		left: 50%;
+		margin-left: -2px;
+		border-radius: 50%;
+	}
+
+	.entry {
+		padding: 20px;
+		border-top: 1px solid #dadada;
+	}
+
+	.entry img {
+		display: inline-block;
+		margin-right: 15px;
+	}
+
+	.text {
+		display: inline-block;
+	}
+
+	.title {
+		font-size: rem(16px);
+	}
+
+	.title .name {
+		font-weight: 500;
+	}
+
+	.time {
+		color: #909090;
+		font-weight: 300;
+		font-size: 14px;
+		display: block;
+		margin-top: 10px;
+	}
+}
