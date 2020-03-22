@@ -63,7 +63,7 @@
                 <outputDirectory>${basedir}/src/main/resources/static/</outputDirectory >
                 <resources>
                     <resource>
-                        <directory>${basedir}/../angular5-full/dist/angular5-full</directory >
+                        <directory>${basedir}/../angular5-full/dist</directory >
                     </resource>
                 </resources>
             </configuration>
