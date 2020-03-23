@@ -1,12 +1,11 @@
 package com.trafficaccidentsanalysis.backend.repository;
 
-import java.util.Optional;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.trafficaccidentsanalysis.backend.model.Roadtype;
+import com.trafficaccidentsanalysis.backend.model.Oldpassword;
+
 @Repository
-public interface RoadTypeRespository extends JpaRepository<Roadtype, Integer> {
+public interface OldpasswordRepository  extends JpaRepository<Oldpassword, Integer>{
 
 }
