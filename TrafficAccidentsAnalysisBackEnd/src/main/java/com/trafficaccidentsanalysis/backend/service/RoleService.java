@@ -1,8 +1,7 @@
 package com.trafficaccidentsanalysis.backend.service;
 
 import java.util.List;
-import java.util.Optional;
-
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.trafficaccidentsanalysis.backend.model.Role;
@@ -11,9 +10,8 @@ import com.trafficaccidentsanalysis.backend.model.Role;
 public interface RoleService {
 	 
 	 Role addRole(Role role);
-	 List<Role>findAllRole();
-	 Optional<Role> findById(int id);
+	 List<Role>getAllRoles();
      Role updateRole(Role role);
-	 void deleteRole(Role role);
+     ResponseEntity<?> deleteRole(Role role);
 
 }
