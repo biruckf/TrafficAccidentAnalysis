@@ -2,6 +2,7 @@ package com.trafficaccidentsanalysis.backend.service;
 
 import java.util.List;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.trafficaccidentsanalysis.backend.model.Pedastrian;
@@ -13,8 +14,8 @@ public interface PedastrianService {
 
 	Pedastrian savePedastrian(Pedastrian pedastrian);
 
-	void deletePedastrian(Pedastrian pedastrian);
+	ResponseEntity<?> deletePedastrian(Pedastrian pedastrian);
 
-	void updatePedastrian(Pedastrian pedastrian);
+	Pedastrian updatePedastrian(Pedastrian pedastrian);
 
 }
