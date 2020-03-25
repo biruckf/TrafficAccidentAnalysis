@@ -45,7 +45,7 @@ public class PedastrianServiceImpl implements PedastrianService {
 			oldPedastrian.setPhoneNumber(pedastrian.getPhoneNumber());
 			oldPedastrian.setPositionDuringAccident(pedastrian.getPositionDuringAccident());
 			oldPedastrian.setVehicle(pedastrian.getVehicle());
-			oldPedastrian.setSex(pedastrian.getSex());
+			
 			return pedastrianRepository.save(oldPedastrian);
 		}).orElseThrow(null);
 				
