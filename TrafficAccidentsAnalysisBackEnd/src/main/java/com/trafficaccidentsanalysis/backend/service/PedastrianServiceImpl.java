@@ -1,4 +1,4 @@
-package com.trafficaccidentsanalysis.backend.service.serviceimpl;
+package com.trafficaccidentsanalysis.backend.service;
 
 import java.util.List;
 
@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.trafficaccidentsanalysis.backend.model.Pedastrian;
 import com.trafficaccidentsanalysis.backend.repository.PedastrianRepository;
-import com.trafficaccidentsanalysis.backend.service.PedastrianService;
 
 @Service
 public class PedastrianServiceImpl implements PedastrianService {
