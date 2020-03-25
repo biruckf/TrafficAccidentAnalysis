@@ -9,9 +9,11 @@ import com.trafficaccidentsanalysis.backend.model.Role;
 
 @Service
 public interface RoleService {
+	 
 	 Role addRole(Role role);
 	 List<Role>findAllRole();
-	 Optional<Role> findById(int roleId);
-	 Optional<Role> findByName(String roleName);
+	 Optional<Role> findById(int id);
+     Role updateRole(Role role);
+	 void deleteRole(Role role);
 
 }
