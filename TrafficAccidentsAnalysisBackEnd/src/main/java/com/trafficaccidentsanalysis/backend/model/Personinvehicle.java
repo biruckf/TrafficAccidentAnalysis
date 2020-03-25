@@ -184,4 +184,11 @@ public class Personinvehicle implements Serializable {
 		this.vehicle = vehicle;
 	}
 
+	public Integer getPersoninvehicleid() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+
 }
