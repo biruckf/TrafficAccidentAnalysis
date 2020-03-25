@@ -11,7 +11,7 @@ import com.trafficaccidentsanalysis.backend.repository.RoleRepository;
 
 @Service
 public class RoleServiceImpl implements RoleService {
-@Autowired
+	@Autowired
 	RoleRepository roleRepository;
 	
 
@@ -21,12 +21,6 @@ public class RoleServiceImpl implements RoleService {
 		return roleRepository.save(role);
 	}
 
-
-	@Override
-	public Optional<Role> findByName(String roleName) {
-
-		return roleRepository.findByRoleName(roleName);
-	}
 
 	@Override
 	public List<Role> findAllRole() {
@@ -42,4 +36,15 @@ public class RoleServiceImpl implements RoleService {
 	}
 
 
+	@Override
+	public Role updateRole(Role role) {
+		return roleRepository.save(role);
+	}
+
+
+	@Override
+	public void deleteRole(Role role) {
+		roleRepository.delete(role);
+		
+	}
 }
