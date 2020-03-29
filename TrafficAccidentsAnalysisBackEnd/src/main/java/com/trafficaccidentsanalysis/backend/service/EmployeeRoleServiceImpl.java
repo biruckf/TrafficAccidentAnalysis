@@ -34,7 +34,6 @@ public class EmployeeRoleServiceImpl implements EmployeeRoleService {
 	@Override
 	public Employeerole updateEmployeeRole(Employeerole employeeRole) {
 		return employeeRoleRepository.findById(employeeRole.getEmployeeRoleid()).map(newRole->{
-			newRole.setDateCreated(employeeRole.getDateCreated());
 			newRole.setDateUpdated(employeeRole.getDateUpdated());
 			newRole.setEmployee(employeeRole.getEmployee());
 			newRole.setRole(employeeRole.getRole());
