@@ -37,7 +37,7 @@ public class MotoristController {
 	
 	@PutMapping("/update")
 	public Motorist updateMotorist(@RequestBody Motorist motorist) {
-		return motoristService.updateMotoris(motorist);
+		return motoristService.updateMotorist(motorist);
 		
 	}
 	
