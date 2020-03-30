@@ -60,7 +60,6 @@ public class PersoninvehicleServiceImpl implements PersoninvehicleService {
         oldPersoninvehicle.setPersonType(personinvehicle.getPersonType());
         oldPersoninvehicle.setRestraintUsed(personinvehicle.getRestraintUsed());
         oldPersoninvehicle.setInjuryClass(personinvehicle.getInjuryClass());
-      
     	
 		return personinvehicleRepository.save(oldPersoninvehicle);
 	}).orElseThrow(null);
