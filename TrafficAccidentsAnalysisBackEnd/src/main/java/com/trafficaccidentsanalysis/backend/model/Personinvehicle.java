@@ -189,6 +189,26 @@ public class Personinvehicle implements Serializable {
 		return null;
 	}
 
+	public Personinvehicle(String additionalInfo, String address, int age, Date dateCreated, Date dateUpdated,
+			String firstName, String injuryClass, String lastName, String middleName, String personType,
+			String phoneNumber, String restraintUsed, String sex, Vehicle vehicle) {
+		super();
+		this.additionalInfo = additionalInfo;
+		this.address = address;
+		this.age = age;
+		this.dateCreated = dateCreated;
+		this.dateUpdated = dateUpdated;
+		this.firstName = firstName;
+		this.injuryClass = injuryClass;
+		this.lastName = lastName;
+		this.middleName = middleName;
+		this.personType = personType;
+		this.phoneNumber = phoneNumber;
+		this.restraintUsed = restraintUsed;
+		this.sex = sex;
+		this.vehicle = vehicle;
+	}
+
 	
 
 }
