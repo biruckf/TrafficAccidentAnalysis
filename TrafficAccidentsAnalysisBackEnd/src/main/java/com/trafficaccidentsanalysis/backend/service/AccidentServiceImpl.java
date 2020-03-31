@@ -8,9 +8,8 @@ import org.springframework.stereotype.Service;
 
 import com.trafficaccidentsanalysis.backend.model.Accident;
 import com.trafficaccidentsanalysis.backend.repository.AccidentRepository;
-import com.trafficaccidentsanalysis.backend.repository.AccidentRepository;
-@Service
 
+@Service
 public class AccidentServiceImpl implements AccidentService {
 	@Autowired
 	AccidentRepository accidentRepository;
