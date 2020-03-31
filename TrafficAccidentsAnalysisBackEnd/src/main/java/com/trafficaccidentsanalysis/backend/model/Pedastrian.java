@@ -161,4 +161,24 @@ public class Pedastrian implements Serializable {
 		this.vehicle = vehicle;
 	}
 
+	public Pedastrian(String additionalInfo, String address, int age, Date dateCreated, String firstName,
+			String injuryClass, String lastName, String middleName, String phoneNumber, String positionDuringAccident,
+			String sex, Vehicle vehicle) {
+		super();
+		this.additionalInfo = additionalInfo;
+		this.address = address;
+		this.age = age;
+		this.dateCreated = dateCreated;
+		this.firstName = firstName;
+		this.injuryClass = injuryClass;
+		this.lastName = lastName;
+		this.middleName = middleName;
+		this.phoneNumber = phoneNumber;
+		this.positionDuringAccident = positionDuringAccident;
+		this.sex = sex;
+		this.vehicle = vehicle;
+	}
+	
+	
+
 }

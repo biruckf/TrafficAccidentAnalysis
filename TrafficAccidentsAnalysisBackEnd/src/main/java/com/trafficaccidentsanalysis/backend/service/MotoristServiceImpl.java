@@ -38,7 +38,7 @@ import com.trafficaccidentsanalysis.backend.repository.MotoristRepository;
 		}
 
 		@Override
-	public Motorist updateMotoris(Motorist motorist) {
+	public Motorist updateMotorist(Motorist motorist) {
 			
 		return motoristRepository.findById(motorist.getMotoristid()).map(oldMotorist->{
 		oldMotorist.setAdditionalInfo(motorist.getAdditionalInfo());

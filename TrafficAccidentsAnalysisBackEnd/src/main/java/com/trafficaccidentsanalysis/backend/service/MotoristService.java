@@ -12,6 +12,6 @@ public interface MotoristService {
 	List<Motorist> getAllMotorists();
 	Motorist saveMotorist(Motorist motorist);
 	ResponseEntity<?> deleteMotorist(Motorist motorist);
-	Motorist updateMotoris(Motorist motorist);
+	Motorist updateMotorist(Motorist motorist);
 }
  

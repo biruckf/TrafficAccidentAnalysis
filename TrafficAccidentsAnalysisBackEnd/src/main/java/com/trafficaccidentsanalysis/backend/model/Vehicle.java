@@ -226,7 +226,7 @@ public class Vehicle implements Serializable {
 	public void setMotorists(List<Motorist> motorists) {
 		this.motorists = motorists;
 	}
-
+	
 	public Motorist addMotorist(Motorist motorist) {
 		getMotorists().add(motorist);
 		motorist.setVehicle(this);

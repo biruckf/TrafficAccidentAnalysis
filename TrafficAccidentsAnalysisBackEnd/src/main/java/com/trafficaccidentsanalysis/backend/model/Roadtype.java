@@ -35,6 +35,17 @@ public class Roadtype implements Serializable {
 
 	public Roadtype() {
 	}
+	
+	
+	public Roadtype(Date dateCreated, Date dateUpdated, String roadType, String updatedBy) {
+		super();
+		this.dateCreated = dateCreated;
+		this.dateUpdated = dateUpdated;
+		this.roadType = roadType;
+		this.updatedBy = updatedBy;
+	}
+	
+
 
 	public int getRoadTypeid() {
 		return this.roadTypeid;

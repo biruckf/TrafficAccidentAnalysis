@@ -43,6 +43,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	public Employee updateEmployee(Employee employee) {
 		return employeeRepository.findById(employee.getEmployeeid()).map(oldemployee->
 		{
+<<<<<<< HEAD
 				oldemployee.setAccessLockoutEnd(employee.getAccessLockoutEnd());
 				oldemployee.setAdditionalInfo(employee.getAdditionalInfo());
 				oldemployee.setDateCreated(employee.getDateCreated());
@@ -60,6 +61,25 @@ public class EmployeeServiceImpl implements EmployeeService {
 				oldemployee.setEmployeecontacts(employee.getEmployeecontacts());
 				oldemployee.setEmployeeroles(employee.getEmployeeroles());
 				oldemployee.setOldpasswords(employee.getOldpasswords());
+=======
+				employee.setAccessLockoutEnd(employee.getAccessLockoutEnd());
+				employee.setAdditionalInfo(employee.getAdditionalInfo());
+				employee.setDateCreated(employee.getDateCreated());
+				employee.setDateUpdated(employee.getDateUpdated());
+				employee.setFirstName(employee.getFirstName());
+				employee.setIsActive(employee.getIsActive());
+				employee.setLastAccessedDate(employee.getLastAccessedDate());
+				employee.setLastName(employee.getLastName());
+				employee.setLoginFailedCount(employee.getLoginFailedCount());
+				employee.setLoginLockoutEnabled(employee.getLoginLockoutEnabled());
+				employee.setPasswordHash(employee.getPasswordHash());
+				employee.setPasswordSalt(employee.getPasswordSalt());
+				employee.setUpdatedBy(employee.getUpdatedBy());
+				employee.setUserName(employee.getUserName());
+				employee.setEmployeecontacts(employee.getEmployeecontacts());
+				employee.setEmployeeroles(employee.getEmployeeroles());
+				employee.setOldpasswords(employee.getOldpasswords());
+>>>>>>> refs/remotes/origin/master
 		
 		return employeeRepository.save(oldemployee);
 				}).orElseThrow(null);

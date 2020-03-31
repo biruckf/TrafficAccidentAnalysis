@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 
 import com.trafficaccidentsanalysis.backend.model.Roadtype;
 @Repository
-public interface RoadTypeRespository extends JpaRepository<Roadtype, Integer> {
+public interface RoadTypeRepository extends JpaRepository<Roadtype, Integer> {
 
 }

@@ -11,11 +11,8 @@ import com.trafficaccidentsanalysis.backend.model.Pedastrian;
 public interface PedastrianService {
 
 	List<Pedastrian> getAllPedastrian();
-
-	Pedastrian savePedastrian(Pedastrian pedastrian);
-
+    Pedastrian savePedastrian(Pedastrian pedastrian);
+    Pedastrian updatePedastrian(Pedastrian pedastrian);
 	ResponseEntity<?> deletePedastrian(Pedastrian pedastrian);
-
-	Pedastrian updatePedastrian(Pedastrian pedastrian);
 
 }

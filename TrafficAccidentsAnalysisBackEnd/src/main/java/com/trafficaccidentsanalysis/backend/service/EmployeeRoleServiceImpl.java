@@ -4,10 +4,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 
 import com.trafficaccidentsanalysis.backend.model.Employeerole;
 import com.trafficaccidentsanalysis.backend.repository.EmployeeRoleRepository;
 
+@Service
 public class EmployeeRoleServiceImpl implements EmployeeRoleService {
 
 	@Autowired
@@ -34,7 +36,6 @@ public class EmployeeRoleServiceImpl implements EmployeeRoleService {
 	@Override
 	public Employeerole updateEmployeeRole(Employeerole employeeRole) {
 		return employeeRoleRepository.findById(employeeRole.getEmployeeRoleid()).map(newRole->{
-			newRole.setDateCreated(employeeRole.getDateCreated());
 			newRole.setDateUpdated(employeeRole.getDateUpdated());
 			newRole.setEmployee(employeeRole.getEmployee());
 			newRole.setRole(employeeRole.getRole());
