@@ -13,7 +13,7 @@ public interface EmployeeService {
 
 	List<Employee> getAllEmplyee();
 	Employee addEmployee (Employee employee);
-	ResponseEntity<?>deleteEmployee(Employee employee);
+	ResponseEntity<?> deleteEmployee(Employee employee);
 	Employee updateEmployee(Employee employee);
 
 }
