@@ -26,7 +26,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return employeeRepository.save(employee);
 	}
 
-	public Employee saveEmployeecontact(Employee employee) {
+	public Employee saveEmployee(Employee employee) {
 		return employeeRepository.save(employee);
 	}
 
