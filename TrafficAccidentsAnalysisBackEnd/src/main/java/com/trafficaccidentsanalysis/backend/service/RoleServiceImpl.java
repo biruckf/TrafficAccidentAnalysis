@@ -15,7 +15,7 @@ public class RoleServiceImpl implements RoleService {
 	RoleRepository roleRepository;
 
 	@Override
-    public Role addRole(Role role) {	
+    public Role saveRole(Role role) {	
 		
 		return roleRepository.save(role);
 	}
@@ -48,4 +48,6 @@ public class RoleServiceImpl implements RoleService {
 	}).orElseThrow(null);
 	
   }
+
+
 }

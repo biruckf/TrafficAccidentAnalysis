@@ -9,8 +9,7 @@ import com.trafficaccidentsanalysis.backend.model.Role;
 @Service
 public interface RoleService {
 	 
-	 Role addRole(Role role);
-	 
+	 Role saveRole(Role role);
 	 List<Role>getAllRoles();
      Role updateRole(Role role);
      ResponseEntity<?> deleteRole(Role role);
