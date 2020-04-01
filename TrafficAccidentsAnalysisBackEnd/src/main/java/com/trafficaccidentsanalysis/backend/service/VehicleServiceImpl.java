@@ -4,10 +4,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 
+import com.trafficaccidentsanalysis.backend.model.Employeerole;
 import com.trafficaccidentsanalysis.backend.model.Vehicle;
 import com.trafficaccidentsanalysis.backend.repository.VehicleRepository;
-
+@Service
 public  class VehicleServiceImpl implements VehicleService {
 
 	
@@ -16,7 +18,7 @@ public  class VehicleServiceImpl implements VehicleService {
 
 	@Override
 	public List<Vehicle> getAllVehicle() {
-		return vehicleRepository.findAll();
+		return (List<Vehicle>) vehicleRepository.findAll();
 	}
 
 	@Override
@@ -30,7 +32,7 @@ public  class VehicleServiceImpl implements VehicleService {
 		// TODO Auto-generated method stub
 		return vehicleRepository.add(vehicle);
 	}   */
-
+	
 	@Override
 	public ResponseEntity<?> deleteVehicle(Vehicle vehicle) {
 		return (ResponseEntity<?>) vehicleRepository.findById(vehicle.getVehicleid()).map(vehicleDelete->{

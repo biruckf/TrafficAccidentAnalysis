@@ -16,7 +16,7 @@ import com.trafficaccidentsanalysis.backend.model.Pedastrian;
 import com.trafficaccidentsanalysis.backend.service.PedastrianService;
 
 @RestController
-@RequestMapping("/getall")
+@RequestMapping("/trafficaccidentanalysis/pedastrian")
 public class PedastrianController {
 	
 	@Autowired

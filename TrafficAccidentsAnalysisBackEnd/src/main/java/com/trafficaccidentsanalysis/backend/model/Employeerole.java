@@ -43,6 +43,19 @@ public class Employeerole implements Serializable {
 	public Employeerole() {
 	}
 
+	
+	
+	private Employeerole(Date dateCreated, Date dateUpdated, String updatedBy, Employee employee, Role role) {
+		super();
+		this.dateCreated = dateCreated;
+		this.dateUpdated = dateUpdated;
+		this.updatedBy = updatedBy;
+		this.employee = employee;
+		this.role = role;
+	}
+
+
+
 	public int getEmployeeRoleid() {
 		return this.employeeRoleid;
 	}

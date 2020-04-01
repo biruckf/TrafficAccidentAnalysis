@@ -276,4 +276,9 @@ public class Employee implements Serializable {
 		return oldpassword;
 	}
 
+	public Object getCity() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

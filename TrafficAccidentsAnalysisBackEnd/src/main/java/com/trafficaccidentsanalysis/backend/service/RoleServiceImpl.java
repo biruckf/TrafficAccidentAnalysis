@@ -34,8 +34,7 @@ public class RoleServiceImpl implements RoleService {
 			oldRole.setDateUpdated(new Date());
 			oldRole.setEmployeeroles(role.getEmployeeroles());
 			oldRole.setRoleName(role.getRoleName());
-			oldRole.setUpdatedBy(role.getUpdatedBy());
-		
+			oldRole.setUpdatedBy(role.getUpdatedBy());		
 		return roleRepository.save(oldRole);
 		}).orElseThrow(null);
 	}
