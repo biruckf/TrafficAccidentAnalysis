@@ -12,6 +12,6 @@ public interface RoleService {
 	 Role saveRole(Role role);
 	 List<Role>getAllRoles();
      Role updateRole(Role role);
-     ResponseEntity<?> deleteRole(Role role);
+     ResponseEntity<?> deleteRole(int roleid);
 
 }
