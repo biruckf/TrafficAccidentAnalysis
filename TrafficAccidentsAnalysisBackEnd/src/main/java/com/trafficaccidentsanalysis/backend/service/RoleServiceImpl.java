@@ -32,7 +32,7 @@ public class RoleServiceImpl implements RoleService {
 	public Role updateRole(Role role) {
 		return roleRepository.findById(role.getRoleid()).map(oldRole -> {
 			oldRole.setDateUpdated(new Date());
-			oldRole.setEmployeeroles(role.getEmployeeroles());
+			oldRole.setEmployees(role.getEmployees());
 			oldRole.setRoleName(role.getRoleName());
 			oldRole.setUpdatedBy(role.getUpdatedBy());		
 		return roleRepository.save(oldRole);

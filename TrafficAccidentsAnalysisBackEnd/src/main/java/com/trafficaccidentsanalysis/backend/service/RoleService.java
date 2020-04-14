@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.trafficaccidentsanalysis.backend.model.Role;
 
+
 @Service
 public interface RoleService {
 	 

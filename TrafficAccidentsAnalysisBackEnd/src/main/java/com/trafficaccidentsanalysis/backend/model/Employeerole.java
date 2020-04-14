@@ -27,34 +27,15 @@ public class Employeerole implements Serializable {
 	@Column(name="date_updated")
 	private Date dateUpdated;
 
+	private int employeeid;
+
+	private int roleid;
+
 	@Column(name="updated_by")
 	private String updatedBy;
 
-	//bi-directional many-to-one association to Employee
-	@ManyToOne
-	@JoinColumn(name="employeeid")
-	private Employee employee;
-
-	//bi-directional many-to-one association to Role
-	@ManyToOne
-	@JoinColumn(name="roleid")
-	private Role role;
-
 	public Employeerole() {
 	}
-
-	
-	
-	private Employeerole(Date dateCreated, Date dateUpdated, String updatedBy, Employee employee, Role role) {
-		super();
-		this.dateCreated = dateCreated;
-		this.dateUpdated = dateUpdated;
-		this.updatedBy = updatedBy;
-		this.employee = employee;
-		this.role = role;
-	}
-
-
 
 	public int getEmployeeRoleid() {
 		return this.employeeRoleid;
@@ -80,28 +61,28 @@ public class Employeerole implements Serializable {
 		this.dateUpdated = dateUpdated;
 	}
 
+	public int getEmployeeid() {
+		return this.employeeid;
+	}
+
+	public void setEmployeeid(int employeeid) {
+		this.employeeid = employeeid;
+	}
+
+	public int getRoleid() {
+		return this.roleid;
+	}
+
+	public void setRoleid(int roleid) {
+		this.roleid = roleid;
+	}
+
 	public String getUpdatedBy() {
 		return this.updatedBy;
 	}
 
 	public void setUpdatedBy(String updatedBy) {
 		this.updatedBy = updatedBy;
-	}
-
-	public Employee getEmployee() {
-		return this.employee;
-	}
-
-	public void setEmployee(Employee employee) {
-		this.employee = employee;
-	}
-
-	public Role getRole() {
-		return this.role;
-	}
-
-	public void setRole(Role role) {
-		this.role = role;
 	}
 
 }

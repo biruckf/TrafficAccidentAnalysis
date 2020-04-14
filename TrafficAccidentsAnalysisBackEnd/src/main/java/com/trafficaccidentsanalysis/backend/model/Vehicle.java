@@ -39,7 +39,7 @@ public class Vehicle implements Serializable {
 	private Date dateUpdated;
 
 	@Column(name="has_insurance")
-	private Boolean hasInsurance;
+	private byte hasInsurance;
 
 	private String make;
 
@@ -139,11 +139,11 @@ public class Vehicle implements Serializable {
 		this.dateUpdated = dateUpdated;
 	}
 
-	public Boolean getHasInsurance() {
+	public byte getHasInsurance() {
 		return this.hasInsurance;
 	}
 
-	public void setHasInsurance(Boolean hasInsurance) {
+	public void setHasInsurance(byte hasInsurance) {
 		this.hasInsurance = hasInsurance;
 	}
 
@@ -226,7 +226,7 @@ public class Vehicle implements Serializable {
 	public void setMotorists(List<Motorist> motorists) {
 		this.motorists = motorists;
 	}
-	
+
 	public Motorist addMotorist(Motorist motorist) {
 		getMotorists().add(motorist);
 		motorist.setVehicle(this);

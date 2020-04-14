@@ -33,9 +33,18 @@ public class Role implements Serializable {
 	@Column(name="updated_by")
 	private String updatedBy;
 
-	//bi-directional many-to-one association to Employeerole
-	@OneToMany(mappedBy="role")
-	private List<Employeerole> employeeroles;
+	//bi-directional many-to-many association to Employee
+	@ManyToMany
+	@JoinTable(
+		name="employee_roles"
+		, joinColumns={
+			@JoinColumn(name="roles_roleid")
+			}
+		, inverseJoinColumns={
+			@JoinColumn(name="employees_employeeid")
+			}
+		)
+	private List<Employee> employees;
 
 	public Role() {
 	}
@@ -80,26 +89,12 @@ public class Role implements Serializable {
 		this.updatedBy = updatedBy;
 	}
 
-	public List<Employeerole> getEmployeeroles() {
-		return this.employeeroles;
+	public List<Employee> getEmployees() {
+		return this.employees;
 	}
 
-	public void setEmployeeroles(List<Employeerole> employeeroles) {
-		this.employeeroles = employeeroles;
-	}
-
-	public Employeerole addEmployeerole(Employeerole employeerole) {
-		getEmployeeroles().add(employeerole);
-		employeerole.setRole(this);
-
-		return employeerole;
-	}
-
-	public Employeerole removeEmployeerole(Employeerole employeerole) {
-		getEmployeeroles().remove(employeerole);
-		employeerole.setRole(null);
-
-		return employeerole;
+	public void setEmployees(List<Employee> employees) {
+		this.employees = employees;
 	}
 
 }

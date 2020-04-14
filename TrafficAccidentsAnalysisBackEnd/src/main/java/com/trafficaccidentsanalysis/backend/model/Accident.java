@@ -98,51 +98,10 @@ public class Accident implements Serializable {
 
 	@Column(name="weather_during_accident")
 	private String weatherDuringAccident;
-	
 
 	//bi-directional many-to-one association to Attachment
 	@OneToMany(mappedBy="accident")
 	private List<Attachment> attachments;
-	
-
-	public Accident(String accidentType, String additionalInfo, String addressLocation, String city, Date dateCreated,
-			String dateOfAccident, Date dateUpdated, String latitude, String legalRoadSpeedKmh, String logitude,
-			int numberOfModerateInjury, int numberOfDeath, int numberOfMajorInjury, int numberOfMinorInjury,
-			int numberOfPeopleInvolved, int numberOfVehiclesInvolved, String region, String reportingOfficerName,
-			String reportingOfficerPhone, String reportingOfficerStataion, String roadClassification,
-			String roadCondition, String roadType, String timeOfAccident, int uknownInjury, Date updatedBy,
-			String weatherDuringAccident, List<Attachment> attachments, List<Vehicle> vehicles) {
-		super();
-		this.accidentType = accidentType;
-		this.additionalInfo = additionalInfo;
-		this.addressLocation = addressLocation;
-		this.city = city;
-		this.dateCreated = dateCreated;
-		this.dateOfAccident = dateOfAccident;
-		this.dateUpdated = dateUpdated;
-		this.latitude = latitude;
-		this.legalRoadSpeedKmh = legalRoadSpeedKmh;
-		this.logitude = logitude;
-		this.numberOfModerateInjury = numberOfModerateInjury;
-		this.numberOfDeath = numberOfDeath;
-		this.numberOfMajorInjury = numberOfMajorInjury;
-		this.numberOfMinorInjury = numberOfMinorInjury;
-		this.numberOfPeopleInvolved = numberOfPeopleInvolved;
-		this.numberOfVehiclesInvolved = numberOfVehiclesInvolved;
-		this.region = region;
-		this.reportingOfficerName = reportingOfficerName;
-		this.reportingOfficerPhone = reportingOfficerPhone;
-		this.reportingOfficerStataion = reportingOfficerStataion;
-		this.roadClassification = roadClassification;
-		this.roadCondition = roadCondition;
-		this.roadType = roadType;
-		this.timeOfAccident = timeOfAccident;
-		this.uknownInjury = uknownInjury;
-		this.updatedBy = updatedBy;
-		this.weatherDuringAccident = weatherDuringAccident;
-		this.attachments = attachments;
-		this.vehicles = vehicles;
-	}
 
 	//bi-directional many-to-one association to Vehicle
 	@OneToMany(mappedBy="accident")

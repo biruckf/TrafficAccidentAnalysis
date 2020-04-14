@@ -5,7 +5,6 @@
 		<class>com.trafficaccidentsanalysis.backend.model.Attachment</class>
 		<class>com.trafficaccidentsanalysis.backend.model.Employee</class>
 		<class>com.trafficaccidentsanalysis.backend.model.Employeecontact</class>
-		<class>com.trafficaccidentsanalysis.backend.model.Employeerole</class>
 		<class>com.trafficaccidentsanalysis.backend.model.Motorist</class>
 		<class>com.trafficaccidentsanalysis.backend.model.Oldpassword</class>
 		<class>com.trafficaccidentsanalysis.backend.model.Pedastrian</class>
@@ -13,5 +12,6 @@
 		<class>com.trafficaccidentsanalysis.backend.model.Roadtype</class>
 		<class>com.trafficaccidentsanalysis.backend.model.Role</class>
 		<class>com.trafficaccidentsanalysis.backend.model.Vehicle</class>
+		<class>com.trafficaccidentsanalysis.backend.model.Employeerole</class>
 	</persistence-unit>
 </persistence>

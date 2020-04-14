@@ -38,7 +38,7 @@ public class Employee implements Serializable {
 	private String firstName;
 
 	@Column(name="is_active")
-	private Boolean isActive;
+	private byte isActive;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="last_accessed_date")
@@ -51,7 +51,7 @@ public class Employee implements Serializable {
 	private short loginFailedCount;
 
 	@Column(name="login_lockout_enabled")
-	private Boolean loginLockoutEnabled;
+	private byte loginLockoutEnabled;
 
 	private String password;
 
@@ -67,13 +67,13 @@ public class Employee implements Serializable {
 	@Column(name="user_name")
 	private String userName;
 
+	//bi-directional many-to-many association to Role
+	@ManyToMany(mappedBy="employees")
+	private List<Role> roles;
+
 	//bi-directional many-to-one association to Employeecontact
 	@OneToMany(mappedBy="employee")
 	private List<Employeecontact> employeecontacts;
-
-	//bi-directional many-to-one association to Employeerole
-	@OneToMany(mappedBy="employee")
-	private List<Employeerole> employeeroles;
 
 	//bi-directional many-to-one association to Oldpassword
 	@OneToMany(mappedBy="employee")
@@ -130,11 +130,11 @@ public class Employee implements Serializable {
 		this.firstName = firstName;
 	}
 
-	public Boolean getIsActive() {
+	public byte getIsActive() {
 		return this.isActive;
 	}
 
-	public void setIsActive(Boolean isActive) {
+	public void setIsActive(byte isActive) {
 		this.isActive = isActive;
 	}
 
@@ -162,11 +162,11 @@ public class Employee implements Serializable {
 		this.loginFailedCount = loginFailedCount;
 	}
 
-	public Boolean getLoginLockoutEnabled() {
+	public byte getLoginLockoutEnabled() {
 		return this.loginLockoutEnabled;
 	}
 
-	public void setLoginLockoutEnabled(Boolean loginLockoutEnabled) {
+	public void setLoginLockoutEnabled(byte loginLockoutEnabled) {
 		this.loginLockoutEnabled = loginLockoutEnabled;
 	}
 
@@ -210,6 +210,14 @@ public class Employee implements Serializable {
 		this.userName = userName;
 	}
 
+	public List<Role> getRoles() {
+		return this.roles;
+	}
+
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
+	}
+
 	public List<Employeecontact> getEmployeecontacts() {
 		return this.employeecontacts;
 	}
@@ -232,28 +240,6 @@ public class Employee implements Serializable {
 		return employeecontact;
 	}
 
-	public List<Employeerole> getEmployeeroles() {
-		return this.employeeroles;
-	}
-
-	public void setEmployeeroles(List<Employeerole> employeeroles) {
-		this.employeeroles = employeeroles;
-	}
-
-	public Employeerole addEmployeerole(Employeerole employeerole) {
-		getEmployeeroles().add(employeerole);
-		employeerole.setEmployee(this);
-
-		return employeerole;
-	}
-
-	public Employeerole removeEmployeerole(Employeerole employeerole) {
-		getEmployeeroles().remove(employeerole);
-		employeerole.setEmployee(null);
-
-		return employeerole;
-	}
-
 	public List<Oldpassword> getOldpasswords() {
 		return this.oldpasswords;
 	}
@@ -274,11 +260,6 @@ public class Employee implements Serializable {
 		oldpassword.setEmployee(null);
 
 		return oldpassword;
-	}
-
-	public Object getCity() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

@@ -58,7 +58,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 				oldemployee.setUpdatedBy(employee.getUpdatedBy());
 				oldemployee.setUserName(employee.getUserName());
 				oldemployee.setEmployeecontacts(employee.getEmployeecontacts());
-				oldemployee.setEmployeeroles(employee.getEmployeeroles());
+				oldemployee.setRoles(employee.getRoles());
 				oldemployee.setOldpasswords(employee.getOldpasswords());
 		
 		return employeeRepository.save(oldemployee);

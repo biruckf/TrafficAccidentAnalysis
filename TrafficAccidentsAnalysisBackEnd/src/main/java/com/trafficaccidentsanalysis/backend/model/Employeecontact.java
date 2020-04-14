@@ -37,7 +37,7 @@ public class Employeecontact implements Serializable {
 	private String email;
 
 	@Column(name="email_confirmed")
-	private Boolean emailConfirmed;
+	private byte emailConfirmed;
 
 	@Column(name="phone_number_mobile")
 	private String phoneNumberMobile;
@@ -60,7 +60,7 @@ public class Employeecontact implements Serializable {
 	private String region;
 
 	@Column(name="tow_factor_enabled")
-	private Boolean towFactorEnabled;
+	private byte towFactorEnabled;
 
 	@Column(name="updated_by")
 	private String updatedBy;
@@ -129,11 +129,11 @@ public class Employeecontact implements Serializable {
 		this.email = email;
 	}
 
-	public Boolean getEmailConfirmed() {
+	public byte getEmailConfirmed() {
 		return this.emailConfirmed;
 	}
 
-	public void setEmailConfirmed(Boolean emailConfirmed) {
+	public void setEmailConfirmed(byte emailConfirmed) {
 		this.emailConfirmed = emailConfirmed;
 	}
 
@@ -193,11 +193,11 @@ public class Employeecontact implements Serializable {
 		this.region = region;
 	}
 
-	public Boolean getTowFactorEnabled() {
+	public byte getTowFactorEnabled() {
 		return this.towFactorEnabled;
 	}
 
-	public void setTowFactorEnabled(Boolean towFactorEnabled) {
+	public void setTowFactorEnabled(byte towFactorEnabled) {
 		this.towFactorEnabled = towFactorEnabled;
 	}
 

@@ -32,7 +32,7 @@ public class Motorist implements Serializable {
 	private String education;
 
 	@Column(name="has_license")
-	private Boolean hasLicense;
+	private byte hasLicense;
 
 	@Column(name="issued_country")
 	private String issuedCountry;
@@ -98,11 +98,11 @@ public class Motorist implements Serializable {
 		this.education = education;
 	}
 
-	public Boolean getHasLicense() {
+	public byte getHasLicense() {
 		return this.hasLicense;
 	}
 
-	public void setHasLicense(Boolean hasLicense) {
+	public void setHasLicense(byte hasLicense) {
 		this.hasLicense = hasLicense;
 	}
 

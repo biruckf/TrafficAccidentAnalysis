@@ -30,7 +30,7 @@ public class PersoninvehicleServiceImpl implements PersoninvehicleService {
 	@Override
 	public ResponseEntity<?>  deletePersoninvehicle 
 	 (Personinvehicle personinvehicle) {
-		return (ResponseEntity<?>) personinvehicleRepository.findById(personinvehicle.getPersoninvehicleid()).map(personinvehicleToDelete->{
+		return (ResponseEntity<?>) personinvehicleRepository.findById(personinvehicle.getPersonid()).map(personinvehicleToDelete->{
 			personinvehicleRepository.delete(personinvehicleToDelete);
 			return ResponseEntity.ok();	
 		}).orElseThrow(null);
@@ -44,7 +44,7 @@ public class PersoninvehicleServiceImpl implements PersoninvehicleService {
 	
 	{
 		
-	return personinvehicleRepository.findById(personinvehicle.getPersoninvehicleid()).map(oldPersoninvehicle->{
+	return personinvehicleRepository.findById(personinvehicle.getPersonid()).map(oldPersoninvehicle->{
 			
 		
 		oldPersoninvehicle.setDateUpdated(new Date());
