@@ -11,7 +11,7 @@ import com.trafficaccidentsanalysis.backend.model.Motorist;
 public interface MotoristService {
 	List<Motorist> getAllMotorists();
 	Motorist saveMotorist(Motorist motorist);
-	ResponseEntity<?> deleteMotorist(Motorist motorist);
+	ResponseEntity<?> deleteMotorist(int id);
 	Motorist updateMotorist(Motorist motorist);
 }
  

@@ -29,10 +29,10 @@ import com.trafficaccidentsanalysis.backend.repository.MotoristRepository;
 		}
 
 		@Override
-		public ResponseEntity<?> deleteMotorist(Motorist motorist) {
-			return (ResponseEntity<?>) motoristRepository.findById(motorist.getMotoristid()).map(motoristToDelete->{
+		public ResponseEntity<?> deleteMotorist(int id) {
+			return (ResponseEntity<?>) motoristRepository.findById(id).map(motoristToDelete->{
 				motoristRepository.delete(motoristToDelete);
-				return ResponseEntity.ok();
+				return ResponseEntity.ok("scussfully deleted!");
 			}).orElseThrow(null);
 			
 		}
