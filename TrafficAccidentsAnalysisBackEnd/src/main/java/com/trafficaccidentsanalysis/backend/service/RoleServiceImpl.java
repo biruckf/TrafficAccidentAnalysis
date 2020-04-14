@@ -40,11 +40,9 @@ public class RoleServiceImpl implements RoleService {
 	}
 
 	@Override
-	public ResponseEntity<?> deleteRole(Role role) {
-	return (ResponseEntity<?>)roleRepository.findById(role.getRoleid()).map(roleToDelete->{
-    roleRepository.delete(role);
-	return ResponseEntity.ok();
-	}).orElseThrow(null);
+	public ResponseEntity<?> deleteRole(int roleid) {
+	roleRepository.findById(roleid); 
+	return ResponseEntity.ok("Successfully Deleted!");
 	
   }
 
