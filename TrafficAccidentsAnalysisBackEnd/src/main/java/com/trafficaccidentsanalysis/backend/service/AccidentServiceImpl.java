@@ -70,6 +70,7 @@ public class AccidentServiceImpl implements AccidentService {
 			oldAccident.setUknownInjury(accident.getUknownInjury());
 			oldAccident.setUpdatedBy(accident.getUpdatedBy());
 			oldAccident.setVehicles(accident.getVehicles());
+			oldAccident.setVehicles("String");
 			oldAccident.setWeatherDuringAccident(accident.getWeatherDuringAccident());
 			return accidentRepository.save(oldAccident);
 		}).orElseThrow(null);

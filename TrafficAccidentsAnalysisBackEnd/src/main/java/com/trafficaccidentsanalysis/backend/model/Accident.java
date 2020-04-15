@@ -378,4 +378,5 @@ public class Accident implements Serializable {
 		return vehicle;
 	}
 
+	
 }
