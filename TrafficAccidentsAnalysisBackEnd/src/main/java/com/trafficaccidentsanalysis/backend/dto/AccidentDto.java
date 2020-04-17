@@ -37,5 +37,185 @@ public class AccidentDto {
 	private String weatherDuringAccidentDto;
 	private List<AttachmentDto> attachmentsDto;
 	private List<VehicleDto> vehiclesDto;
+	public int getAccidentidDto() {
+		return accidentidDto;
+	}
+	public void setAccidentidDto(int accidentidDto) {
+		this.accidentidDto = accidentidDto;
+	}
+	public String getAccidentTypeDto() {
+		return accidentTypeDto;
+	}
+	public void setAccidentTypeDto(String accidentTypeDto) {
+		this.accidentTypeDto = accidentTypeDto;
+	}
+	public String getAdditionalInfoDto() {
+		return additionalInfoDto;
+	}
+	public void setAdditionalInfoDto(String additionalInfoDto) {
+		this.additionalInfoDto = additionalInfoDto;
+	}
+	public String getAddressLocationDto() {
+		return addressLocationDto;
+	}
+	public void setAddressLocationDto(String addressLocationDto) {
+		this.addressLocationDto = addressLocationDto;
+	}
+	public String getCityDto() {
+		return cityDto;
+	}
+	public void setCityDto(String cityDto) {
+		this.cityDto = cityDto;
+	}
+	public Date getDateCreatedDto() {
+		return dateCreatedDto;
+	}
+	public void setDateCreatedDto(Date dateCreatedDto) {
+		this.dateCreatedDto = dateCreatedDto;
+	}
+	public String getDateOfAccidentDto() {
+		return dateOfAccidentDto;
+	}
+	public void setDateOfAccidentDto(String dateOfAccidentDto) {
+		this.dateOfAccidentDto = dateOfAccidentDto;
+	}
+	public Date getDateUpdatedDto() {
+		return dateUpdatedDto;
+	}
+	public void setDateUpdatedDto(Date dateUpdatedDto) {
+		this.dateUpdatedDto = dateUpdatedDto;
+	}
+	public String getLatitudeDto() {
+		return latitudeDto;
+	}
+	public void setLatitudeDto(String latitudeDto) {
+		this.latitudeDto = latitudeDto;
+	}
+	public String getLegalRoadSpeedKmhDto() {
+		return legalRoadSpeedKmhDto;
+	}
+	public void setLegalRoadSpeedKmhDto(String legalRoadSpeedKmhDto) {
+		this.legalRoadSpeedKmhDto = legalRoadSpeedKmhDto;
+	}
+	public String getLogitudeDto() {
+		return logitudeDto;
+	}
+	public void setLogitudeDto(String logitudeDto) {
+		this.logitudeDto = logitudeDto;
+	}
+	public int getNumberOfModerateInjuryDto() {
+		return numberOfModerateInjuryDto;
+	}
+	public void setNumberOfModerateInjuryDto(int numberOfModerateInjuryDto) {
+		this.numberOfModerateInjuryDto = numberOfModerateInjuryDto;
+	}
+	public int getNumberOfDeathDto() {
+		return numberOfDeathDto;
+	}
+	public void setNumberOfDeathDto(int numberOfDeathDto) {
+		this.numberOfDeathDto = numberOfDeathDto;
+	}
+	public int getNumberOfMajorInjuryDto() {
+		return numberOfMajorInjuryDto;
+	}
+	public void setNumberOfMajorInjuryDto(int numberOfMajorInjuryDto) {
+		this.numberOfMajorInjuryDto = numberOfMajorInjuryDto;
+	}
+	public int getNumberOfMinorInjuryDto() {
+		return numberOfMinorInjuryDto;
+	}
+	public void setNumberOfMinorInjuryDto(int numberOfMinorInjuryDto) {
+		this.numberOfMinorInjuryDto = numberOfMinorInjuryDto;
+	}
+	public int getNumberOfPeopleInvolvedDto() {
+		return numberOfPeopleInvolvedDto;
+	}
+	public void setNumberOfPeopleInvolvedDto(int numberOfPeopleInvolvedDto) {
+		this.numberOfPeopleInvolvedDto = numberOfPeopleInvolvedDto;
+	}
+	public int getNumberOfVehiclesInvolvedDto() {
+		return numberOfVehiclesInvolvedDto;
+	}
+	public void setNumberOfVehiclesInvolvedDto(int numberOfVehiclesInvolvedDto) {
+		this.numberOfVehiclesInvolvedDto = numberOfVehiclesInvolvedDto;
+	}
+	public String getRegionDto() {
+		return regionDto;
+	}
+	public void setRegionDto(String regionDto) {
+		this.regionDto = regionDto;
+	}
+	public String getReportingOfficerNameDto() {
+		return reportingOfficerNameDto;
+	}
+	public void setReportingOfficerNameDto(String reportingOfficerNameDto) {
+		this.reportingOfficerNameDto = reportingOfficerNameDto;
+	}
+	public String getReportingOfficerPhoneDto() {
+		return reportingOfficerPhoneDto;
+	}
+	public void setReportingOfficerPhoneDto(String reportingOfficerPhoneDto) {
+		this.reportingOfficerPhoneDto = reportingOfficerPhoneDto;
+	}
+	public String getReportingOfficerStataionDto() {
+		return reportingOfficerStataionDto;
+	}
+	public void setReportingOfficerStataionDto(String reportingOfficerStataionDto) {
+		this.reportingOfficerStataionDto = reportingOfficerStataionDto;
+	}
+	public String getRoadClassificationDto() {
+		return roadClassificationDto;
+	}
+	public void setRoadClassificationDto(String roadClassificationDto) {
+		this.roadClassificationDto = roadClassificationDto;
+	}
+	public String getRoadConditionDto() {
+		return roadConditionDto;
+	}
+	public void setRoadConditionDto(String roadConditionDto) {
+		this.roadConditionDto = roadConditionDto;
+	}
+	public String getRoadTypeDtoDto() {
+		return roadTypeDtoDto;
+	}
+	public void setRoadTypeDtoDto(String roadTypeDtoDto) {
+		this.roadTypeDtoDto = roadTypeDtoDto;
+	}
+	public String getTimeOfAccidentDto() {
+		return timeOfAccidentDto;
+	}
+	public void setTimeOfAccidentDto(String timeOfAccidentDto) {
+		this.timeOfAccidentDto = timeOfAccidentDto;
+	}
+	public int getUknownInjuryDto() {
+		return uknownInjuryDto;
+	}
+	public void setUknownInjuryDto(int uknownInjuryDto) {
+		this.uknownInjuryDto = uknownInjuryDto;
+	}
+	public Date getUpdatedByDto() {
+		return updatedByDto;
+	}
+	public void setUpdatedByDto(Date updatedByDto) {
+		this.updatedByDto = updatedByDto;
+	}
+	public String getWeatherDuringAccidentDto() {
+		return weatherDuringAccidentDto;
+	}
+	public void setWeatherDuringAccidentDto(String weatherDuringAccidentDto) {
+		this.weatherDuringAccidentDto = weatherDuringAccidentDto;
+	}
+	public List<AttachmentDto> getAttachmentsDto() {
+		return attachmentsDto;
+	}
+	public void setAttachmentsDto(List<AttachmentDto> attachmentsDto) {
+		this.attachmentsDto = attachmentsDto;
+	}
+	public List<VehicleDto> getVehiclesDto() {
+		return vehiclesDto;
+	}
+	public void setVehiclesDto(List<VehicleDto> vehiclesDto) {
+		this.vehiclesDto = vehiclesDto;
+	}
 	
 }

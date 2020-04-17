@@ -57,6 +57,25 @@ public class Motorist implements Serializable {
 
 	public Motorist() {
 	}
+	
+
+	public Motorist(String additionalInfo, Date dateCreated, Date dateUpdated, String education, byte hasLicense,
+			String issuedCountry, Date issuedDate, String issuedState, String licenseNumber, String motorisReadiness,
+			Vehicle vehicle) {
+		super();
+		this.additionalInfo = additionalInfo;
+		this.dateCreated = dateCreated;
+		this.dateUpdated = dateUpdated;
+		this.education = education;
+		this.hasLicense = hasLicense;
+		this.issuedCountry = issuedCountry;
+		this.issuedDate = issuedDate;
+		this.issuedState = issuedState;
+		this.licenseNumber = licenseNumber;
+		this.motorisReadiness = motorisReadiness;
+		this.vehicle = vehicle;
+	}
+
 
 	public int getMotoristid() {
 		return this.motoristid;

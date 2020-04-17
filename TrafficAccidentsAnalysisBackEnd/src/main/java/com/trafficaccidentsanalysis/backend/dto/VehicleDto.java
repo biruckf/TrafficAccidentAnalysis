@@ -27,6 +27,30 @@ public class VehicleDto {
 	public VehicleDto() {
 		super();
 	}
+	
+	public VehicleDto(String accidentPositionDto, String additionalInfoDto, String colorDto, String damageClassDto,
+			Date dateCreatedDto, Date dateUpdatedDto, byte hasInsuranceDto, String makeDto, String mannerOfCollisionDto,
+			String modelDto, String plateNumberDto, String vehicleOwnerDto, int vehicle_speed_before_accident_KMhDto,
+			String vehicleTypeDto, String vinDto, int yearDto) {
+		super();
+		this.accidentPositionDto = accidentPositionDto;
+		this.additionalInfoDto = additionalInfoDto;
+		this.colorDto = colorDto;
+		this.damageClassDto = damageClassDto;
+		this.dateCreatedDto = dateCreatedDto;
+		this.dateUpdatedDto = dateUpdatedDto;
+		this.hasInsuranceDto = hasInsuranceDto;
+		this.makeDto = makeDto;
+		this.mannerOfCollisionDto = mannerOfCollisionDto;
+		this.modelDto = modelDto;
+		this.plateNumberDto = plateNumberDto;
+		this.vehicleOwnerDto = vehicleOwnerDto;
+		this.vehicle_speed_before_accident_KMhDto = vehicle_speed_before_accident_KMhDto;
+		this.vehicleTypeDto = vehicleTypeDto;
+		this.vinDto = vinDto;
+		this.yearDto = yearDto;
+	}
+
 	public int getVehicleidDto() {
 		return vehicleidDto;
 	}
