@@ -12,6 +12,7 @@ public interface AccidentService {
 
 	List<Accident> getAllAccident();
 	Accident saveAccident(AccidentDto accidentDto);
+	Accident saveAccident(Accident accident);
 	ResponseEntity<?> deleteAccident(Accident accident);
 	Accident updateAccident(Accident accident);
 }

@@ -2,8 +2,13 @@ package com.trafficaccidentsanalysis.backend.model;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 
 /**
@@ -64,16 +69,19 @@ public class Vehicle implements Serializable {
 	private int year;
 
 	//bi-directional many-to-one association to Motorist
-	@OneToMany(mappedBy="vehicle")
-	private List<Motorist> motorists;
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "vehicle")
+	@JsonIgnore
+	private Set<Motorist> motorists;
 
 	//bi-directional many-to-one association to Pedastrian
 	@OneToMany(mappedBy="vehicle")
-	private List<Pedastrian> pedastrians;
+	private Set<Pedastrian> pedastrians;
 
 	//bi-directional many-to-one association to Personinvehicle
-	@OneToMany(mappedBy="vehicle")
-	private List<Personinvehicle> personinvehicles;
+	
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "vehicle")
+	@JsonIgnore
+	private Set<Personinvehicle> personinvehicles;
 
 	//bi-directional many-to-one association to Accident
 	@ManyToOne
@@ -243,15 +251,25 @@ public class Vehicle implements Serializable {
 		this.year = year;
 	}
 
-	public List<Motorist> getMotorists() {
+	public Set<Motorist> getMotorists() {
 		return this.motorists;
 	}
 
-	public void setMotorists(List<Motorist> motorists) {
+	public void setMotorists(Set<Motorist> motorists) {
+		if(this.motorists==null) {
+			this.motorists=new HashSet<Motorist>();
+		}
+		for(Motorist m:motorists) {
+			getMotorists().add(m);
+			m.setVehicle(this);
+		}
 		this.motorists = motorists;
 	}
 
 	public Motorist addMotorist(Motorist motorist) {
+		if(motorists==null) {
+			motorists=new HashSet<Motorist>();
+		}
 		getMotorists().add(motorist);
 		motorist.setVehicle(this);
 
@@ -265,11 +283,11 @@ public class Vehicle implements Serializable {
 		return motorist;
 	}
 
-	public List<Pedastrian> getPedastrians() {
+	public Set<Pedastrian> getPedastrians() {
 		return this.pedastrians;
 	}
 
-	public void setPedastrians(List<Pedastrian> pedastrians) {
+	public void setPedastrians(Set<Pedastrian> pedastrians) {
 		this.pedastrians = pedastrians;
 	}
 
@@ -287,15 +305,25 @@ public class Vehicle implements Serializable {
 		return pedastrian;
 	}
 
-	public List<Personinvehicle> getPersoninvehicles() {
+	public Set<Personinvehicle> getPersoninvehicles() {
 		return this.personinvehicles;
 	}
 
-	public void setPersoninvehicles(List<Personinvehicle> personinvehicles) {
-		this.personinvehicles = personinvehicles;
+	public void setPersoninvehicles(Set<Personinvehicle> personinvehicles) {
+		if(this.personinvehicles==null) {
+			this.personinvehicles=new HashSet<Personinvehicle>();
+		}
+		for(Personinvehicle person:personinvehicles) {
+			getPersoninvehicles().add(person);
+			person.setVehicle(this);
+		}
+		
 	}
 
 	public Personinvehicle addPersoninvehicle(Personinvehicle personinvehicle) {
+		if(personinvehicles==null) {
+			personinvehicles=new HashSet<Personinvehicle>();
+		}
 		getPersoninvehicles().add(personinvehicle);
 		personinvehicle.setVehicle(this);
 

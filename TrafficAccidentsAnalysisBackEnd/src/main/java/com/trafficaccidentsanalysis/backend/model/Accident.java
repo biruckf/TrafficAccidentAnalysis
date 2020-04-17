@@ -2,8 +2,14 @@ package com.trafficaccidentsanalysis.backend.model;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.Date;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 
 /**
@@ -100,12 +106,14 @@ public class Accident implements Serializable {
 	private String weatherDuringAccident;
 
 	//bi-directional many-to-one association to Attachment
+	
 	@OneToMany(mappedBy="accident")
 	private List<Attachment> attachments;
 
 	//bi-directional many-to-one association to Vehicle
-	@OneToMany(mappedBy="accident")
-	private List<Vehicle> vehicles;
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "accident")
+	@JsonIgnore
+	private Set<Vehicle> vehicles;
 
 	public Accident() {
 	}
@@ -393,15 +401,25 @@ public class Accident implements Serializable {
 		return attachment;
 	}
 
-	public List<Vehicle> getVehicles() {
+	public Set<Vehicle> getVehicles() {
 		return this.vehicles;
 	}
 
-	public void setVehicles(List<Vehicle> vehicles) {
-		this.vehicles = vehicles;
+	public void setVehicles(Set<Vehicle> vehicles) {
+		if(this.vehicles == null) {
+			this.vehicles= new HashSet<Vehicle>();
+		}
+		for(Vehicle v:vehicles) {
+			getVehicles().add(v);
+			v.setAccident(this);
+		}
+		
 	}
 
 	public Vehicle addVehicle(Vehicle vehicle) {
+		if(vehicles == null) {
+			vehicles= new HashSet<Vehicle>();
+		}
 		getVehicles().add(vehicle);
 		vehicle.setAccident(this);
 

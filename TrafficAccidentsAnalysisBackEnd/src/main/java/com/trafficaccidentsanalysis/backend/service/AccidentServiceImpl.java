@@ -31,7 +31,8 @@ public class AccidentServiceImpl implements AccidentService {
 	MotoristService moteristService;
 	@Autowired
 	PedastrianService pedisteriananService;
-
+	Accident accident=new Accident();
+	Vehicle vehicle=new Vehicle();
 
 	@Override
 	public List<Accident> getAllAccident() {
@@ -41,7 +42,7 @@ public class AccidentServiceImpl implements AccidentService {
 
 	@Override
 	public Accident saveAccident(AccidentDto accidentDto) {
-		Accident accident=new Accident(accidentDto.getAccidentTypeDto(),accidentDto.getAdditionalInfoDto(),accidentDto.getAddressLocationDto()
+	accident=new Accident(accidentDto.getAccidentTypeDto(),accidentDto.getAdditionalInfoDto(),accidentDto.getAddressLocationDto()
 				,accidentDto.getCityDto(),accidentDto.getDateCreatedDto(),accidentDto.getDateOfAccidentDto()
 				,accidentDto.getDateUpdatedDto(),accidentDto.getLatitudeDto(),accidentDto.getLegalRoadSpeedKmhDto(),accidentDto.getLogitudeDto(),
 				accidentDto.getNumberOfModerateInjuryDto(),accidentDto.getNumberOfDeathDto(),accidentDto.getNumberOfMajorInjuryDto(),
@@ -54,7 +55,7 @@ public class AccidentServiceImpl implements AccidentService {
 		accident=accidentRepository.save(accident);
 		
 		accidentDto.getVehiclesDto().forEach(vehicleDto->{
-			Vehicle vehicle=new Vehicle(vehicleDto.getAccidentPositionDto(),vehicleDto.getAdditionalInfoDto(),vehicleDto.getColorDto(),
+			vehicle=new Vehicle(vehicleDto.getAccidentPositionDto(),vehicleDto.getAdditionalInfoDto(),vehicleDto.getColorDto(),
 					vehicleDto.getDamageClassDto(),vehicleDto.getDateCreatedDto(),vehicleDto.getDateUpdatedDto(),vehicleDto.getHasInsuranceDto(),
 					vehicleDto.getMakeDto(),vehicleDto.getMannerOfCollisionDto(),vehicleDto.getModelDto(),vehicleDto.getPlateNumberDto(),
 					vehicleDto.getVehicleOwnerDto(),vehicleDto.getVehicle_speed_before_accident_KMhDto(),vehicleDto.getVehicleTypeDto(),
@@ -146,6 +147,11 @@ public class AccidentServiceImpl implements AccidentService {
 
 			
 		
+	}
+
+	@Override
+	public Accident saveAccident(Accident accident) {
+		return accidentRepository.save(accident);
 	}
 
 }
