@@ -345,6 +345,9 @@ public class Accident implements Serializable {
 	}
 
 	public Set<Attachment> getAttachments() {
+		if(this.attachments == null) {
+			this.attachments= new HashSet<Attachment>();
+		}
 		return this.attachments;
 	}
 
@@ -378,6 +381,9 @@ public class Accident implements Serializable {
 	}
 
 	public Set<Vehicle> getVehicles() {
+		if(vehicles == null) {
+			vehicles= new HashSet<Vehicle>();
+		}
 		return this.vehicles;
 	}
 

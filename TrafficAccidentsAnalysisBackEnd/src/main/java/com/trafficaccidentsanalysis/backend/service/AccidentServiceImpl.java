@@ -1,7 +1,9 @@
 package com.trafficaccidentsanalysis.backend.service;
 
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -37,7 +39,7 @@ public class AccidentServiceImpl implements AccidentService {
 		return accidentRepository.save(new AccidentDtoConverter().
 				AccidentDtoToAccidentConverter(accidentDto));
 		
-		}
+	}
 
 	@Override
 	public ResponseEntity<?> deleteAccident(Accident accident) {

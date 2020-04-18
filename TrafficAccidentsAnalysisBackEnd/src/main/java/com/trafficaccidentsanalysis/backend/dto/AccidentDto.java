@@ -208,6 +208,9 @@ public class AccidentDto {
 		this.weatherDuringAccidentDto = weatherDuringAccidentDto;
 	}
 	public Set<AttachmentDto> getAttachmentsDto() {
+		if(this.attachmentsDto == null) {
+			this.attachmentsDto= new HashSet<AttachmentDto>();
+		}
 		return attachmentsDto;
 	}
 	public void setAttachmentsDto(Set<AttachmentDto> attachmentsDto) {
@@ -229,6 +232,9 @@ public class AccidentDto {
 	}
 	
 	public Set<VehicleDto> getVehiclesDto() {
+		if(this.vehiclesDto == null) {
+			this.vehiclesDto= new HashSet<VehicleDto>();
+		}
 		return vehiclesDto;
 	}
 	public void setVehiclesDto(Set<VehicleDto> vehiclesDto) {

@@ -27,35 +27,35 @@ AccidentService accidentService;
 	@Override
 	public void run(String... args) throws Exception {
 		
-		Accident accident=new Accident();
-		Set<Vehicle> vehicles=new HashSet<Vehicle>();
-		
-		Vehicle vehicle =new Vehicle();
-		Vehicle vehicle2 =new Vehicle();
-		
-		Personinvehicle person=new Personinvehicle();
-		Motorist m=new Motorist();
-		
-		m.setAdditionalInfo("Moterist");;
-		accident.setAccidentType("Test3");
-		person.setAdditionalInfo("Testing");
-		
-		vehicle.setModel("Toyota");
-		vehicle.addPersoninvehicle(person);
-		vehicle.addMotorist(m);
-		vehicle2.setModel("Nissan");
-		
-		
-		
-		vehicles.add(vehicle);
-		
-		vehicles.add(vehicle2);
-		
-//		accident.addVehicle(vehicle);
-//		accident.addVehicle(vehicle2);
-		accident.setVehicles(vehicles);
-		accidentService.saveAccident(accident);
-		
+//		Accident accident=new Accident();
+//		Set<Vehicle> vehicles=new HashSet<Vehicle>();
+//		
+//		Vehicle vehicle =new Vehicle();
+//		Vehicle vehicle2 =new Vehicle();
+//		
+//		Personinvehicle person=new Personinvehicle();
+//		Motorist m=new Motorist();
+//		
+//		m.setAdditionalInfo("Moterist");;
+//		accident.setAccidentType("Test3");
+//		person.setAdditionalInfo("Testing");
+//		
+//		vehicle.setModel("Toyota");
+//		vehicle.addPersoninvehicle(person);
+//		vehicle.addMotorist(m);
+//		vehicle2.setModel("Nissan");
+//		
+//		
+//		
+//		vehicles.add(vehicle);
+//		
+//		vehicles.add(vehicle2);
+//		
+////		accident.addVehicle(vehicle);
+////		accident.addVehicle(vehicle2);
+//		accident.setVehicles(vehicles);
+//		accidentService.saveAccident(accident);
+//		
 		
 	}
 

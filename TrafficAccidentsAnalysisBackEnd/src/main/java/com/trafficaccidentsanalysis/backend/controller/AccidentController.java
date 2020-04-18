@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.trafficaccidentsanalysis.backend.dto.AccidentDto;
 import com.trafficaccidentsanalysis.backend.model.Accident;
 import com.trafficaccidentsanalysis.backend.service.AccidentService;
 
@@ -22,8 +23,8 @@ public class AccidentController {
 	private AccidentService accidentService;
 	
 	@PostMapping("/save")
-	public Accident saveAccident(@RequestBody Accident accident) {
-		return accidentService.saveAccident(accident);
+	public Accident saveAccident(@RequestBody AccidentDto accidentDto) {
+		return accidentService.saveAccident(accidentDto);
 		
 	}
 	

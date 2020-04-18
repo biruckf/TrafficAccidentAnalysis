@@ -156,6 +156,9 @@ public class VehicleDto {
 		this.yearDto = yearDto;
 	}
 	public Set<MotoristDto> getMotoristsDto() {
+		if(this.motoristsDto==null) {
+			this.motoristsDto=new HashSet<MotoristDto>();
+		}
 		return motoristsDto;
 	}
 	public void setMotoristsDto(Set<MotoristDto> motoristsDto) {
@@ -171,6 +174,9 @@ public class VehicleDto {
 		getMotoristsDto().add(motoristDto);
 	}
 	public Set<PedastrianDto> getPedastriansDto() {
+		if(this.pedastriansDto==null) {
+			this.pedastriansDto=new HashSet<PedastrianDto>();
+		}
 		return pedastriansDto;
 	}
 	public void setPedastriansDto(Set<PedastrianDto> pedastriansDto) {
@@ -187,13 +193,19 @@ public class VehicleDto {
 	}
 	
 	public Set<PersoninvehicleDto> getPersoninvehiclesDto() {
+		if(this.personinvehiclesDto==null) {
+			this.personinvehiclesDto=new HashSet<PersoninvehicleDto>();
+		}
 		return personinvehiclesDto;
 	}
 	public void setPersoninvehiclesDto(Set<PersoninvehicleDto> personinvehiclesDto) {
 		if(this.personinvehiclesDto==null) {
 			this.personinvehiclesDto=new HashSet<PersoninvehicleDto>();
 		}
-		this.personinvehiclesDto = personinvehiclesDto;
+		personinvehiclesDto.forEach(person->{
+			getPersoninvehiclesDto().add(person);
+		});
+		
 	}
 	
 	public void addPersoninvehicleDto(PersoninvehicleDto personinvehicleDto) {

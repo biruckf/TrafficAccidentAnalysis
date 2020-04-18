@@ -228,6 +228,9 @@ public class Vehicle implements Serializable {
 	}
 
 	public Set<Motorist> getMotorists() {
+		if(motorists==null) {
+			motorists=new HashSet<Motorist>();
+		}
 		return this.motorists;
 	}
 
@@ -260,6 +263,9 @@ public class Vehicle implements Serializable {
 	}
 
 	public Set<Pedastrian> getPedastrians() {
+		if(this.pedastrians==null) {
+			this.pedastrians=new HashSet<Pedastrian>();
+		}
 		return this.pedastrians;
 	}
 
@@ -292,6 +298,9 @@ public class Vehicle implements Serializable {
 	}
 
 	public Set<Personinvehicle> getPersoninvehicles() {
+		if(personinvehicles==null) {
+			personinvehicles=new HashSet<Personinvehicle>();
+		}
 		return this.personinvehicles;
 	}
 
