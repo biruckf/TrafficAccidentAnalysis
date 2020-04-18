@@ -1,7 +1,9 @@
 package com.trafficaccidentsanalysis.backend.dto;
 
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import com.trafficaccidentsanalysis.backend.model.Attachment;
 import com.trafficaccidentsanalysis.backend.model.Vehicle;
@@ -30,13 +32,13 @@ public class AccidentDto {
 	private String reportingOfficerStataionDto;
 	private String roadClassificationDto;
 	private String roadConditionDto;
-	private String roadTypeDtoDto;
+	private String roadTypeDto;
 	private String timeOfAccidentDto;
 	private int uknownInjuryDto;
 	private Date updatedByDto;
 	private String weatherDuringAccidentDto;
-	private List<AttachmentDto> attachmentsDto;
-	private List<VehicleDto> vehiclesDto;
+	private Set<AttachmentDto> attachmentsDto;
+	private Set<VehicleDto> vehiclesDto;
 	public int getAccidentidDto() {
 		return accidentidDto;
 	}
@@ -175,11 +177,11 @@ public class AccidentDto {
 	public void setRoadConditionDto(String roadConditionDto) {
 		this.roadConditionDto = roadConditionDto;
 	}
-	public String getRoadTypeDtoDto() {
-		return roadTypeDtoDto;
+	public String getRoadTypeDto() {
+		return roadTypeDto;
 	}
-	public void setRoadTypeDtoDto(String roadTypeDtoDto) {
-		this.roadTypeDtoDto = roadTypeDtoDto;
+	public void setRoadTypeDto(String roadTypeDto) {
+		this.roadTypeDto = roadTypeDto;
 	}
 	public String getTimeOfAccidentDto() {
 		return timeOfAccidentDto;
@@ -205,16 +207,30 @@ public class AccidentDto {
 	public void setWeatherDuringAccidentDto(String weatherDuringAccidentDto) {
 		this.weatherDuringAccidentDto = weatherDuringAccidentDto;
 	}
-	public List<AttachmentDto> getAttachmentsDto() {
+	public Set<AttachmentDto> getAttachmentsDto() {
 		return attachmentsDto;
 	}
-	public void setAttachmentsDto(List<AttachmentDto> attachmentsDto) {
+	public void setAttachmentsDto(Set<AttachmentDto> attachmentsDto) {
+		if(this.attachmentsDto == null) {
+			this.attachmentsDto= new HashSet<AttachmentDto>();
+		}
+		for(AttachmentDto a:attachmentsDto) {
+			getAttachmentsDto().add(a);
+			
+		}
 		this.attachmentsDto = attachmentsDto;
 	}
-	public List<VehicleDto> getVehiclesDto() {
+	public Set<VehicleDto> getVehiclesDto() {
 		return vehiclesDto;
 	}
-	public void setVehiclesDto(List<VehicleDto> vehiclesDto) {
+	public void setVehiclesDto(Set<VehicleDto> vehiclesDto) {
+		if(this.vehiclesDto == null) {
+			this.vehiclesDto= new HashSet<VehicleDto>();
+		}
+		for(VehicleDto v:vehiclesDto) {
+			getVehiclesDto().add(v);
+			
+		}
 		this.vehiclesDto = vehiclesDto;
 	}
 	

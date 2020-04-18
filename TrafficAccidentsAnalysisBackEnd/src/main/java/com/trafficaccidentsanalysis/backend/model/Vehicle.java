@@ -91,30 +91,6 @@ public class Vehicle implements Serializable {
 	public Vehicle() {
 	}
 
-	public Vehicle(String accidentPosition, String additionalInfo, String color, String damageClass, Date dateCreated,
-			Date dateUpdated, byte hasInsurance, String make, String mannerOfCollision, String model,
-			String plateNumber, String vehicleOwner, int vehicle_speed_before_accident_KMh, String vehicleType,
-			String vin, int year, Accident accident) {
-		super();
-		this.accidentPosition = accidentPosition;
-		this.additionalInfo = additionalInfo;
-		this.color = color;
-		this.damageClass = damageClass;
-		this.dateCreated = dateCreated;
-		this.dateUpdated = dateUpdated;
-		this.hasInsurance = hasInsurance;
-		this.make = make;
-		this.mannerOfCollision = mannerOfCollision;
-		this.model = model;
-		this.plateNumber = plateNumber;
-		this.vehicleOwner = vehicleOwner;
-		this.vehicle_speed_before_accident_KMh = vehicle_speed_before_accident_KMh;
-		this.vehicleType = vehicleType;
-		this.vin = vin;
-		this.year = year;
-		this.accident = accident;
-	}
-
 	public int getVehicleid() {
 		return this.vehicleid;
 	}
@@ -288,10 +264,20 @@ public class Vehicle implements Serializable {
 	}
 
 	public void setPedastrians(Set<Pedastrian> pedastrians) {
-		this.pedastrians = pedastrians;
+		if(this.pedastrians==null) {
+			this.pedastrians=new HashSet<Pedastrian>();
+		}
+		for(Pedastrian  ped:pedastrians) {
+			getPedastrians().add(ped);
+			ped.setVehicle(this);
+		}
+		
 	}
 
 	public Pedastrian addPedastrian(Pedastrian pedastrian) {
+		if(this.pedastrians==null) {
+			this.pedastrians=new HashSet<Pedastrian>();
+		}
 		getPedastrians().add(pedastrian);
 		pedastrian.setVehicle(this);
 

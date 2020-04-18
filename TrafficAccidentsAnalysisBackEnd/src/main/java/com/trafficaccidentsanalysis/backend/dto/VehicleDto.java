@@ -1,7 +1,9 @@
 package com.trafficaccidentsanalysis.backend.dto;
 
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class VehicleDto {
 	private int vehicleidDto;
@@ -21,9 +23,9 @@ public class VehicleDto {
 	private String vehicleTypeDto;
 	private String vinDto;
 	private int yearDto;
-	private List<MotoristDto> motoristsDto;
-	private List<PedastrianDto> pedastriansDto;
-	private List<PersoninvehicleDto> personinvehiclesDto;
+	private Set<MotoristDto> motoristsDto;
+	private Set<PedastrianDto> pedastriansDto;
+	private Set<PersoninvehicleDto> personinvehiclesDto;
 	public VehicleDto() {
 		super();
 	}
@@ -153,22 +155,31 @@ public class VehicleDto {
 	public void setYearDto(int yearDto) {
 		this.yearDto = yearDto;
 	}
-	public List<MotoristDto> getMotoristsDto() {
+	public Set<MotoristDto> getMotoristsDto() {
 		return motoristsDto;
 	}
-	public void setMotoristsDto(List<MotoristDto> motoristsDto) {
+	public void setMotoristsDto(Set<MotoristDto> motoristsDto) {
+		if(this.motoristsDto==null) {
+			this.motoristsDto=new HashSet<MotoristDto>();
+		}
 		this.motoristsDto = motoristsDto;
 	}
-	public List<PedastrianDto> getPedastriansDto() {
+	public Set<PedastrianDto> getPedastriansDto() {
 		return pedastriansDto;
 	}
-	public void setPedastriansDto(List<PedastrianDto> pedastriansDto) {
+	public void setPedastriansDto(Set<PedastrianDto> pedastriansDto) {
+		if(this.pedastriansDto==null) {
+			this.pedastriansDto=new HashSet<PedastrianDto>();
+		}
 		this.pedastriansDto = pedastriansDto;
 	}
-	public List<PersoninvehicleDto> getPersoninvehiclesDto() {
+	public Set<PersoninvehicleDto> getPersoninvehiclesDto() {
 		return personinvehiclesDto;
 	}
-	public void setPersoninvehiclesDto(List<PersoninvehicleDto> personinvehiclesDto) {
+	public void setPersoninvehiclesDto(Set<PersoninvehicleDto> personinvehiclesDto) {
+		if(this.personinvehiclesDto==null) {
+			this.personinvehiclesDto=new HashSet<PersoninvehicleDto>();
+		}
 		this.personinvehiclesDto = personinvehiclesDto;
 	}
 	

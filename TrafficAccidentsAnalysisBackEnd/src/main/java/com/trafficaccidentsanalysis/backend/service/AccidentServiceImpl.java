@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import com.trafficaccidentsanalysis.backend.dotconverter.AccidentDtoConverter;
+import com.trafficaccidentsanalysis.backend.dotconverter.VehicleDtoConverter;
 import com.trafficaccidentsanalysis.backend.dto.AccidentDto;
 import com.trafficaccidentsanalysis.backend.model.Accident;
 import com.trafficaccidentsanalysis.backend.model.Motorist;
@@ -23,17 +25,7 @@ import com.trafficaccidentsanalysis.backend.repository.VehicleRepository;
 public class AccidentServiceImpl implements AccidentService {
 	@Autowired
 	AccidentRepository accidentRepository;
-	@Autowired
-	VehicleService vehicleService;
-	@Autowired
-	PersoninvehicleService personInVehicleService;
-	@Autowired
-	MotoristService moteristService;
-	@Autowired
-	PedastrianService pedisteriananService;
-	Accident accident=new Accident();
-	Vehicle vehicle=new Vehicle();
-
+	
 	@Override
 	public List<Accident> getAllAccident() {
 		
@@ -42,59 +34,10 @@ public class AccidentServiceImpl implements AccidentService {
 
 	@Override
 	public Accident saveAccident(AccidentDto accidentDto) {
-	accident=new Accident(accidentDto.getAccidentTypeDto(),accidentDto.getAdditionalInfoDto(),accidentDto.getAddressLocationDto()
-				,accidentDto.getCityDto(),accidentDto.getDateCreatedDto(),accidentDto.getDateOfAccidentDto()
-				,accidentDto.getDateUpdatedDto(),accidentDto.getLatitudeDto(),accidentDto.getLegalRoadSpeedKmhDto(),accidentDto.getLogitudeDto(),
-				accidentDto.getNumberOfModerateInjuryDto(),accidentDto.getNumberOfDeathDto(),accidentDto.getNumberOfMajorInjuryDto(),
-				accidentDto.getNumberOfMinorInjuryDto(),accidentDto.getNumberOfPeopleInvolvedDto(),accidentDto.getNumberOfVehiclesInvolvedDto(),
-				accidentDto.getRegionDto(),accidentDto.getReportingOfficerNameDto(),accidentDto.getReportingOfficerPhoneDto(),
-				accidentDto.getReportingOfficerStataionDto(),accidentDto.getRoadClassificationDto(),accidentDto.getRoadConditionDto(),
-				accidentDto.getRoadTypeDtoDto(),accidentDto.getTimeOfAccidentDto(),accidentDto.getUknownInjuryDto(),accidentDto.getUpdatedByDto(),
-				accidentDto.getWeatherDuringAccidentDto());
+		return accidentRepository.save(new AccidentDtoConverter().
+				AccidentDtoToAccidentConverter(accidentDto));
 		
-		accident=accidentRepository.save(accident);
-		
-		accidentDto.getVehiclesDto().forEach(vehicleDto->{
-			vehicle=new Vehicle(vehicleDto.getAccidentPositionDto(),vehicleDto.getAdditionalInfoDto(),vehicleDto.getColorDto(),
-					vehicleDto.getDamageClassDto(),vehicleDto.getDateCreatedDto(),vehicleDto.getDateUpdatedDto(),vehicleDto.getHasInsuranceDto(),
-					vehicleDto.getMakeDto(),vehicleDto.getMannerOfCollisionDto(),vehicleDto.getModelDto(),vehicleDto.getPlateNumberDto(),
-					vehicleDto.getVehicleOwnerDto(),vehicleDto.getVehicle_speed_before_accident_KMhDto(),vehicleDto.getVehicleTypeDto(),
-					vehicleDto.getVinDto(),vehicleDto.getYearDto(),accident);
-			
-			vehicle=vehicleService.saveVehicle(vehicle);
-			
-			Motorist motorist=new Motorist(vehicleDto.getMotoristsDto().get(0).getAdditionalInfoDto(),vehicleDto.getMotoristsDto().get(0).getDateCreatedDto(),
-					vehicleDto.getMotoristsDto().get(0).getDateUpdatedDto(),vehicleDto.getMotoristsDto().get(0).getEducationDto(),
-					vehicleDto.getMotoristsDto().get(0).getHasLicenseDto(),vehicleDto.getMotoristsDto().get(0).getIssuedCountryDto(),
-					vehicleDto.getMotoristsDto().get(0).getIssuedDateDto(),vehicleDto.getMotoristsDto().get(0).getIssuedStateDto(),
-					vehicleDto.getMotoristsDto().get(0).getLicenseNumberDto(),vehicleDto.getMotoristsDto().get(0).getMotorisReadinessDto(),
-				     vehicle);
-			motorist=moteristService.saveMotorist(motorist);
-			
-			vehicleDto.getPedastriansDto().forEach(pedastrianDto->{
-				Pedastrian pedastrian=new Pedastrian(pedastrianDto.getAdditionalInfoDto(),pedastrianDto.getAddressDto(),pedastrianDto.getAgeDto(),
-						pedastrianDto.getDateCreatedDto(),pedastrianDto.getFirstNameDto(),
-						pedastrianDto.getInjuryClassDto(),pedastrianDto.getLastNameDto(),pedastrianDto.getMiddleNameDto(),pedastrianDto.getPhoneNumberDto(),
-						pedastrianDto.getPositionDuringAccidentDto(),pedastrianDto.getSexDto(),vehicle);
-				
-				pedastrian=pedisteriananService.savePedastrian(pedastrian);
-			
-				vehicleDto.getPersoninvehiclesDto().forEach(personDto->{
-					Personinvehicle personinvehicle=new Personinvehicle(personDto.getAdditionalInfoDto(),personDto.getAddressDto(),personDto.getAgeDto(),
-							personDto.getDateCreatedDto(),personDto.getDateUpdatedDto(),
-							personDto.getFirstNameDto(),personDto.getInjuryClassDto(),personDto.getLastNameDto(),personDto.getMiddleNameDto(),
-							personDto.getPersonTypeDto(),personDto.getPhoneNumberDto(),personDto.getRestraintUsedDto(),personDto.getSexDto(),vehicle);
-					
-					personinvehicle=personInVehicleService.savePersoninvehicle(personinvehicle);
-				});
-			});
-			
-			
-			
-		});
-		
-		return accident;
-	}
+		}
 
 	@Override
 	public ResponseEntity<?> deleteAccident(Accident accident) {

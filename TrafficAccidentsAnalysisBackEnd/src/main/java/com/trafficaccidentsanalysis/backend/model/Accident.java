@@ -107,8 +107,9 @@ public class Accident implements Serializable {
 
 	//bi-directional many-to-one association to Attachment
 	
-	@OneToMany(mappedBy="accident")
-	private List<Attachment> attachments;
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "accident")
+	@JsonIgnore
+	private Set<Attachment> attachments;
 
 	//bi-directional many-to-one association to Vehicle
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "accident")
@@ -118,43 +119,7 @@ public class Accident implements Serializable {
 	public Accident() {
 	}
 
-	public Accident(String accidentType, String additionalInfo, String addressLocation, String city, Date dateCreated,
-			String dateOfAccident, Date dateUpdated, String latitude, String legalRoadSpeedKmh, String logitude,
-			int numberOfModerateInjury, int numberOfDeath, int numberOfMajorInjury, int numberOfMinorInjury,
-			int numberOfPeopleInvolved, int numberOfVehiclesInvolved, String region, String reportingOfficerName,
-			String reportingOfficerPhone, String reportingOfficerStataion, String roadClassification,
-			String roadCondition, String roadType, String timeOfAccident, int uknownInjury, Date updatedBy,
-			String weatherDuringAccident) {
-		super();
-		this.accidentType = accidentType;
-		this.additionalInfo = additionalInfo;
-		this.addressLocation = addressLocation;
-		this.city = city;
-		this.dateCreated = dateCreated;
-		this.dateOfAccident = dateOfAccident;
-		this.dateUpdated = dateUpdated;
-		this.latitude = latitude;
-		this.legalRoadSpeedKmh = legalRoadSpeedKmh;
-		this.logitude = logitude;
-		this.numberOfModerateInjury = numberOfModerateInjury;
-		this.numberOfDeath = numberOfDeath;
-		this.numberOfMajorInjury = numberOfMajorInjury;
-		this.numberOfMinorInjury = numberOfMinorInjury;
-		this.numberOfPeopleInvolved = numberOfPeopleInvolved;
-		this.numberOfVehiclesInvolved = numberOfVehiclesInvolved;
-		this.region = region;
-		this.reportingOfficerName = reportingOfficerName;
-		this.reportingOfficerPhone = reportingOfficerPhone;
-		this.reportingOfficerStataion = reportingOfficerStataion;
-		this.roadClassification = roadClassification;
-		this.roadCondition = roadCondition;
-		this.roadType = roadType;
-		this.timeOfAccident = timeOfAccident;
-		this.uknownInjury = uknownInjury;
-		this.updatedBy = updatedBy;
-		this.weatherDuringAccident = weatherDuringAccident;
-	}
-
+	
 	public int getAccidentid() {
 		return this.accidentid;
 	}
@@ -379,15 +344,26 @@ public class Accident implements Serializable {
 		this.weatherDuringAccident = weatherDuringAccident;
 	}
 
-	public List<Attachment> getAttachments() {
+	public Set<Attachment> getAttachments() {
 		return this.attachments;
 	}
 
-	public void setAttachments(List<Attachment> attachments) {
+	public void setAttachments(Set<Attachment> attachments) {
+		if(this.attachments == null) {
+			this.attachments= new HashSet<Attachment>();
+		}
+		for(Attachment a:attachments) {
+			getAttachments().add(a);
+			a.setAccident(this);
+		}
+		
 		this.attachments = attachments;
 	}
 
 	public Attachment addAttachment(Attachment attachment) {
+		if(this.attachments == null) {
+			this.attachments= new HashSet<Attachment>();
+		}
 		getAttachments().add(attachment);
 		attachment.setAccident(this);
 
