@@ -39,7 +39,9 @@ public class VehicleDtoConverter {
 	
 	public Set<Vehicle> setOfVehicleDtoToVehicleConverter(Set<VehicleDto> vehiclesDto) {
 		Set<Vehicle> vehicles=new HashSet<Vehicle>();
-		
+		if(vehiclesDto == null) {
+			vehiclesDto= new HashSet<VehicleDto>();
+		}
 		vehiclesDto.forEach(vehicleDto->{
 			vehicles.add(vehicleDtoToVehicleConverter(vehicleDto));
 		});

@@ -164,6 +164,12 @@ public class VehicleDto {
 		}
 		this.motoristsDto = motoristsDto;
 	}
+	public void addMotoristDto(MotoristDto motoristDto) {
+		if(this.motoristsDto==null) {
+			this.motoristsDto=new HashSet<MotoristDto>();
+		}
+		getMotoristsDto().add(motoristDto);
+	}
 	public Set<PedastrianDto> getPedastriansDto() {
 		return pedastriansDto;
 	}
@@ -173,6 +179,13 @@ public class VehicleDto {
 		}
 		this.pedastriansDto = pedastriansDto;
 	}
+	public void addPedastrianDto(PedastrianDto pedastrianDto) {
+		if(this.pedastriansDto==null) {
+			this.pedastriansDto=new HashSet<PedastrianDto>();
+		}
+		getPedastriansDto().add(pedastrianDto);
+	}
+	
 	public Set<PersoninvehicleDto> getPersoninvehiclesDto() {
 		return personinvehiclesDto;
 	}
@@ -181,6 +194,13 @@ public class VehicleDto {
 			this.personinvehiclesDto=new HashSet<PersoninvehicleDto>();
 		}
 		this.personinvehiclesDto = personinvehiclesDto;
+	}
+	
+	public void addPersoninvehicleDto(PersoninvehicleDto personinvehicleDto) {
+		if(this.personinvehiclesDto==null) {
+			this.personinvehiclesDto=new HashSet<PersoninvehicleDto>();
+		}
+		getPersoninvehiclesDto().add(personinvehicleDto);
 	}
 	
 	

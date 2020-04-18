@@ -218,8 +218,16 @@ public class AccidentDto {
 			getAttachmentsDto().add(a);
 			
 		}
-		this.attachmentsDto = attachmentsDto;
+		
 	}
+	public void addAttachmentDto(AttachmentDto attachmentDto) {
+		if(this.attachmentsDto == null) {
+			this.attachmentsDto= new HashSet<AttachmentDto>();
+		}
+			getAttachmentsDto().add(attachmentDto);
+		
+	}
+	
 	public Set<VehicleDto> getVehiclesDto() {
 		return vehiclesDto;
 	}
@@ -231,7 +239,15 @@ public class AccidentDto {
 			getVehiclesDto().add(v);
 			
 		}
-		this.vehiclesDto = vehiclesDto;
+		
+	}
+	public void addVehicleDto(VehicleDto vehicleDto) {
+		if(this.vehiclesDto == null) {
+			this.vehiclesDto= new HashSet<VehicleDto>();
+		}
+			getVehiclesDto().add(vehicleDto);
+			
+		
 	}
 	
 }

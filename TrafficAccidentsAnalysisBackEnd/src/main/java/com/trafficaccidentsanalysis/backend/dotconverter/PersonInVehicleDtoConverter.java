@@ -31,7 +31,9 @@ public class PersonInVehicleDtoConverter {
 	
 	public Set<Personinvehicle> setOfpersoninVehicleDtoToPersoninsVehicleConverter(Set<PersoninvehicleDto> personsInVehicleDto) {
 		Set<Personinvehicle> personsinVehicle=new HashSet<Personinvehicle>();
-		
+		if(personsInVehicleDto==null) {
+			personsInVehicleDto=new HashSet<PersoninvehicleDto>();
+		}
 		personsInVehicleDto.forEach(personsDto->{
 			personsinVehicle.add(personinVehicleDtoToPersoninVehicleConverter(personsDto));
 		});

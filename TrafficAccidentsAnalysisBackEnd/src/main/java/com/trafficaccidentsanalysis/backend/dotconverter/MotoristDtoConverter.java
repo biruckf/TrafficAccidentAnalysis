@@ -27,7 +27,9 @@ public class MotoristDtoConverter {
 	public Set<Motorist> setOfMotoristDtoToSetOfMotoristConverter(Set<MotoristDto> motoristsDto) {
 		
 	Set<Motorist> motorists=new HashSet<Motorist>();
-	
+	if(motoristsDto==null) {
+		motoristsDto=new HashSet<MotoristDto>();
+	}
 	motoristsDto.forEach(motoristDto->{
 		motorists.add(motoristDtoToMotoristConverter(motoristDto));
 	});

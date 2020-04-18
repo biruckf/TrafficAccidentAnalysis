@@ -29,7 +29,9 @@ public class PedastrianDtoConverter {
 	public Set<Pedastrian> setOfPedastrianDtoToSetOfPedastrianConverter(Set<PedastrianDto> pedastriansdto) {
 	
 		Set<Pedastrian> pedastrians=new HashSet<Pedastrian>();
-	
+		if(pedastriansdto==null) {
+			pedastriansdto=new HashSet<PedastrianDto>();
+		}
 		pedastriansdto.forEach(pedastrianDto->{
 			pedastrians.add(pedastrianDtoToPedastrianConverter(pedastrianDto));
 		});

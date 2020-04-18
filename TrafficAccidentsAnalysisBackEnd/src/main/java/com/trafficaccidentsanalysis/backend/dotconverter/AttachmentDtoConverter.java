@@ -21,7 +21,9 @@ public class AttachmentDtoConverter {
 	
 	public Set<Attachment> convertSetOfAttachmentDtoTOSetOfAttachment(Set<AttachmentDto> attachmentsDto){
 		Set<Attachment> attachments=new HashSet<Attachment>();
-		
+		if(attachmentsDto == null) {
+			attachmentsDto= new HashSet<AttachmentDto>();
+		}
 		attachmentsDto.forEach(attachmentDto->{
 			attachments.add(convertAttachmentDtoTOAttachment(attachmentDto));
 		});
