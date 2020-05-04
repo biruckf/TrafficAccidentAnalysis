@@ -7,23 +7,33 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import com.trafficaccidentsanalysis.backend.dotconverter.PersonInVehicleDtoConverter;
+import com.trafficaccidentsanalysis.backend.dto.PersoninvehicleDto;
 import com.trafficaccidentsanalysis.backend.model.Motorist;
 import com.trafficaccidentsanalysis.backend.model.Personinvehicle;
+import com.trafficaccidentsanalysis.backend.model.Vehicle;
 import com.trafficaccidentsanalysis.backend.repository.PersoninvehicleRepository;
 @Service
 public class PersoninvehicleServiceImpl implements PersoninvehicleService {
 
 	@Autowired
 	PersoninvehicleRepository personinvehicleRepository;
+	@Autowired
+	VehicleService vehicleService;
 	@Override
 	public   List<Personinvehicle>  getAllPersoninvehicle() {
 		return personinvehicleRepository.findAll();
 	}
 
 	@Override
-	 public   Personinvehicle savePersoninvehicle(Personinvehicle personinvehicle) {
+	 public   Personinvehicle savePersoninvehicle(PersoninvehicleDto personInVehicleDto, int vehicleId) {
+		Vehicle vehicle=vehicleService.findVehicleById(vehicleId);
+		if(vehicle!=null) {
+			Personinvehicle personinvehicle=	new PersonInVehicleDtoConverter().personinVehicleDtoToPersoninVehicleConverter(personInVehicleDto);
+			personinvehicle.setVehicle(vehicle);
 		return personinvehicleRepository.save(personinvehicle);
-	
+		}
+		return null;
 	}
 	
 	

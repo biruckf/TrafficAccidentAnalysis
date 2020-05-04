@@ -14,6 +14,8 @@ public interface VehicleService {
 //	Vehicle addVehicle(Vehicle vehicle);
 	ResponseEntity<?> deleteVehicle(Vehicle vehicle);
 	Vehicle updateVehicle(Vehicle vehicle);
+	Vehicle findVehicleById(int vehicleId);
+	
 }
 
 

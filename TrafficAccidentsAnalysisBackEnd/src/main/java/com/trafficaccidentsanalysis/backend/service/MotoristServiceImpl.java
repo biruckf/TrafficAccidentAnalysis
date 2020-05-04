@@ -8,7 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import com.trafficaccidentsanalysis.backend.dotconverter.MotoristDtoConverter;
+import com.trafficaccidentsanalysis.backend.dto.MotoristDto;
 import com.trafficaccidentsanalysis.backend.model.Motorist;
+import com.trafficaccidentsanalysis.backend.model.Vehicle;
 import com.trafficaccidentsanalysis.backend.repository.MotoristRepository;
 
 
@@ -16,6 +19,8 @@ import com.trafficaccidentsanalysis.backend.repository.MotoristRepository;
 	public class MotoristServiceImpl implements MotoristService{
 		@Autowired
 		MotoristRepository motoristRepository;
+		@Autowired
+		VehicleService vehicleService;
 
 		@Override
 		public List<Motorist> getAllMotorists() {
@@ -23,9 +28,14 @@ import com.trafficaccidentsanalysis.backend.repository.MotoristRepository;
 			return motoristRepository.findAll();
 		}
 		@Override
-		public Motorist saveMotorist(Motorist motorist) {
-			
+		public Motorist saveMotorist(MotoristDto motoristDto, int vehicleId) {
+			Vehicle vehicle=vehicleService.findVehicleById(vehicleId);
+			if(vehicle!=null) {
+				Motorist motorist=new MotoristDtoConverter().motoristDtoToMotoristConverter(motoristDto);
+				motorist.setVehicle(vehicle);
 			return motoristRepository.save(motorist) ;
+			}
+			return null;
 		}
 
 		@Override

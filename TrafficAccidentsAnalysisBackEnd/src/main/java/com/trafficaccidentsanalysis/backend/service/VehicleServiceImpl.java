@@ -66,6 +66,11 @@ public  class VehicleServiceImpl implements VehicleService {
 
 		}
 
+	@Override
+	public Vehicle findVehicleById(int vehicleId) {
+		return vehicleRepository.findById(vehicleId).orElse(null);
+	}
+
 }
 
 	

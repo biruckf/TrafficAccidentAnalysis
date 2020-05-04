@@ -6,22 +6,32 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import com.trafficaccidentsanalysis.backend.dotconverter.PedastrianDtoConverter;
+import com.trafficaccidentsanalysis.backend.dto.PedastrianDto;
 import com.trafficaccidentsanalysis.backend.model.Pedastrian;
+import com.trafficaccidentsanalysis.backend.model.Vehicle;
 import com.trafficaccidentsanalysis.backend.repository.PedastrianRepository;
 
 @Service
 public class PedastrianServiceImpl implements PedastrianService {
 	@Autowired
 	PedastrianRepository pedastrianRepository;
+	@Autowired
+	VehicleService vehicleService;
 
 	@Override
 	public   List<Pedastrian>  getAllPedastrian(){
 		return pedastrianRepository.findAll();	
 	}
 	@Override	
-	public   Pedastrian savePedastrian(Pedastrian pedastrian) {
+	public   Pedastrian savePedastrian(PedastrianDto pedastriandto, int vehicleId) {
+		Vehicle vehicle=vehicleService.findVehicleById(vehicleId);
+		if(vehicle!=null) {
+			Pedastrian pedastrian=new PedastrianDtoConverter().pedastrianDtoToPedastrianConverter(pedastriandto);
+			pedastrian.setVehicle(vehicle);
 		return pedastrianRepository.save(pedastrian) ;
-		
+		}
+		return null;
 	}
 	
 	@Override	

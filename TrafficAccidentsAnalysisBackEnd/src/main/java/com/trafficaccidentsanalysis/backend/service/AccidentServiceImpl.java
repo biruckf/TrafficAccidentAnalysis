@@ -99,4 +99,14 @@ public class AccidentServiceImpl implements AccidentService {
 		return accidentRepository.save(accident);
 	}
 
+	@Override
+	public Set<Vehicle> getVehicleByAccidentId(int accidentId) {
+		Accident accident=accidentRepository.findById(accidentId).orElse(null);
+		
+		if(accident!=null)
+			return accident.getVehicles();
+		else 
+			return null;
+	}
+
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,7 +17,9 @@ import com.trafficaccidentsanalysis.backend.dto.AccidentDto;
 import com.trafficaccidentsanalysis.backend.model.Accident;
 import com.trafficaccidentsanalysis.backend.service.AccidentService;
 
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
+
 @RequestMapping("/trafficaccidentanalysis/accident")
 public class AccidentController {
 	@Autowired
