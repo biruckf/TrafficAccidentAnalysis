@@ -1,5 +1,6 @@
 import { Routes, RouterModule } from "@angular/router";
 import { LayoutComponent } from "./layout.component";
+import { AdminComponent } from "app/pages/forms/admin/admin.component";
 const LAYOUT_ROUTES: Routes = [
 	{
 		path: "authentication/lock",
@@ -149,6 +150,14 @@ const LAYOUT_ROUTES: Routes = [
 				path: "taskboard",
 				loadChildren: "../pages/taskboard/taskboard.module#TaskboardModule"
 			},
+			// {
+			// 	path: "accident",
+			// 	loadChildren: "../pages/accident-form/accident-form.module#ACCIDENTFORMMODULE"
+			// },
+			//---------------------------------------------------------->
+			//acc
+			//---------------------------------------------------------->
+			
 			//---------------------------------------------------------->
 			//Mail
 			//---------------------------------------------------------->
@@ -166,6 +175,13 @@ const LAYOUT_ROUTES: Routes = [
 			{
 				path: "invoice",
 				loadChildren: "../pages/invoice/invoice.module#InvoiceModule"
+			},
+			//---------------------------------------------------------->
+			//Admin
+			//---------------------------------------------------------->
+			{
+				path: "accident",
+				loadChildren: "../pages/accident-form/accident-form.module#ACCIDENTFORMMODULE"
 			},
 			//---------------------------------------------------------->
 			//Timeline
@@ -292,6 +308,12 @@ const LAYOUT_ROUTES: Routes = [
 				path: "forms/form-components",
 				loadChildren:
 					"../pages/forms/form-components/form-comp.module#FormCompModule"
+			},
+			{
+				path: "forms/admin-components",
+				loadChildren:
+					"../pages/forms/admin/admin.module#AdminModule"
+					
 			},
 			{
 				path: "forms/form-elements",

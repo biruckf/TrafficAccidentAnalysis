@@ -11,7 +11,7 @@ import {MatDrawer} from "@angular/material";
 })
 export class DashboardsComponent implements OnInit {
     //Header Title
-    title: string = "Dashboards";
+    title: string = "Trafic Accident Dashboards";
     //Date
     currentDate: Date;
 

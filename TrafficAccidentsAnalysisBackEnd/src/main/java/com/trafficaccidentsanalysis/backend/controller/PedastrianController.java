@@ -36,11 +36,13 @@ public class PedastrianController {
 	}
 	
 	@PostMapping("/save/{vehicleId}")
-	public Vehicle SavePedastrian(@RequestBody Set<PedastrianDto>  pedastriansdto,@PathVariable (value="vehicleId") int vehicleId) {
+	public Vehicle SavePedastrian(@RequestBody List<PedastrianDto>  pedastriansdto,@PathVariable (value="vehicleId") int vehicleId) {
 		pedastriansdto.forEach(pedastrian->{
 			pedastrianService.savePedastrian(pedastrian,vehicleId);
 		});
+		
 		return 	vehicleService.findVehicleById(vehicleId);
+//		return vehicleId;
 	}
 	
 	@PutMapping("/update")
