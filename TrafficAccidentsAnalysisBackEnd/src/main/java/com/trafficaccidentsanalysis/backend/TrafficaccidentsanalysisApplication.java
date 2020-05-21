@@ -15,11 +15,17 @@ import com.trafficaccidentsanalysis.backend.model.Personinvehicle;
 import com.trafficaccidentsanalysis.backend.model.Vehicle;
 import com.trafficaccidentsanalysis.backend.repository.AccidentRepository;
 import com.trafficaccidentsanalysis.backend.service.AccidentService;
+import com.trafficaccidentsanalysis.backend.service.VehicleService;
 
 @SpringBootApplication
 public class TrafficaccidentsanalysisApplication implements CommandLineRunner{
+	
 @Autowired
 AccidentService accidentService;
+
+@Autowired
+VehicleService vehicleService;
+
 	public static void main(String[] args) {
 		SpringApplication.run(TrafficaccidentsanalysisApplication.class, args);
 	}

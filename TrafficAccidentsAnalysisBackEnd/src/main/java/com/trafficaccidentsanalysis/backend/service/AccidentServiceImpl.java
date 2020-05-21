@@ -1,7 +1,5 @@
 package com.trafficaccidentsanalysis.backend.service;
 
-import java.util.Date;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -27,35 +25,36 @@ import com.trafficaccidentsanalysis.backend.repository.VehicleRepository;
 public class AccidentServiceImpl implements AccidentService {
 	@Autowired
 	AccidentRepository accidentRepository;
-	
+
+	@Autowired
+	VehicleRepository vehicleRepository;
+
 	@Override
 	public List<Accident> getAllAccident() {
-		
+
 		return accidentRepository.findAll();
 	}
 
 	@Override
 	public Accident saveAccident(AccidentDto accidentDto) {
-		return accidentRepository.save(new AccidentDtoConverter().
-				AccidentDtoToAccidentConverter(accidentDto));
-		
+		return accidentRepository.save(new AccidentDtoConverter().AccidentDtoToAccidentConverter(accidentDto));
+
 	}
 
 	@Override
 	public ResponseEntity<?> deleteAccident(Accident accident) {
-		
-		return (ResponseEntity<?>)accidentRepository.findById(accident.getAccidentid()).map(accidentToDelete->{
+
+		return (ResponseEntity<?>) accidentRepository.findById(accident.getAccidentid()).map(accidentToDelete -> {
 			accidentRepository.delete(accidentToDelete);
 			return ResponseEntity.ok();
 		}).orElseThrow(null);
-		
-		}
-	
+
+	}
 
 	@Override
 	public Accident updateAccident(Accident accident) {
-		
-		return accidentRepository.findById(accident.getAccidentid()).map(oldAccident->{
+
+		return accidentRepository.findById(accident.getAccidentid()).map(oldAccident -> {
 			oldAccident.setAdditionalInfo(accident.getAdditionalInfo());
 			oldAccident.setAccidentType(accident.getAccidentType());
 			oldAccident.setAddressLocation(accident.getAddressLocation());
@@ -87,11 +86,7 @@ public class AccidentServiceImpl implements AccidentService {
 			oldAccident.setWeatherDuringAccident(accident.getWeatherDuringAccident());
 			return accidentRepository.save(oldAccident);
 		}).orElseThrow(null);
-				
-			
 
-			
-		
 	}
 
 	@Override
@@ -101,12 +96,28 @@ public class AccidentServiceImpl implements AccidentService {
 
 	@Override
 	public Set<Vehicle> getVehicleByAccidentId(int accidentId) {
-		Accident accident=accidentRepository.findById(accidentId).orElse(null);
-		
-		if(accident!=null)
+		Accident accident = accidentRepository.findById(accidentId).orElse(null);
+
+		if (accident != null)
 			return accident.getVehicles();
-		else 
+		else
 			return null;
 	}
+
+	@Override
+	public List<Vehicle> getVehicleByModel(String modelDto) {
+
+		return this.accidentRepository.findByVehiclesModel(modelDto);
+	}
+
+	@Override
+	public List<Vehicle> findByVehiclesYear(int yearDto) {
+		return this.accidentRepository.findByVehiclesYear(yearDto);
+	}
+	@Override
+	public List<Vehicle> findByVehiclesMake(String makeDto) {
+		return this.accidentRepository.findByVehiclesMake(makeDto);
+	}
+
 
 }

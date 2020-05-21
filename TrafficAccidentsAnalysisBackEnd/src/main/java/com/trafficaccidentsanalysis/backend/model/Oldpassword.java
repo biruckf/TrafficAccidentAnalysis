@@ -4,44 +4,54 @@ import java.io.Serializable;
 import javax.persistence.*;
 import java.util.Date;
 
-
 /**
  * The persistent class for the oldpassword database table.
  * 
  */
 @Entity
-@NamedQuery(name="Oldpassword.findAll", query="SELECT o FROM Oldpassword o")
+@NamedQuery(name = "Oldpassword.findAll", query = "SELECT o FROM Oldpassword o")
 public class Oldpassword implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="old_passwordid")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "old_passwordid")
 	private int oldPasswordid;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="date_created")
+	@Column(name = "date_created")
 	private Date dateCreated;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="date_updated")
+	@Column(name = "date_updated")
 	private Date dateUpdated;
 
-	@Column(name="old_password")
+	@Column(name = "old_password")
 	private String oldPassword;
 
-	@Column(name="old_password_hash")
+	@Column(name = "old_password_hash")
 	private String oldPasswordHash;
 
-	@Column(name="updated_by")
+	@Column(name = "updated_by")
 	private String updatedBy;
 
-	//bi-directional many-to-one association to Employee
+	// bi-directional many-to-one association to Employee
 	@ManyToOne
-	@JoinColumn(name="employeeid")
+	@JoinColumn(name = "employeeid")
 	private Employee employee;
 
 	public Oldpassword() {
+	}
+
+	public Oldpassword(Date dateCreated, Date dateUpdated, String oldPassword, String oldPasswordHash, String updatedBy,
+			Employee employee) {
+		super();
+		this.dateCreated = dateCreated;
+		this.dateUpdated = dateUpdated;
+		this.oldPassword = oldPassword;
+		this.oldPasswordHash = oldPasswordHash;
+		this.updatedBy = updatedBy;
+		this.employee = employee;
 	}
 
 	public int getOldPasswordid() {
