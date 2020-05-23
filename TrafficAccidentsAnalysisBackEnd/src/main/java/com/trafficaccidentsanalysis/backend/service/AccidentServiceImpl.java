@@ -104,20 +104,6 @@ public class AccidentServiceImpl implements AccidentService {
 			return null;
 	}
 
-	@Override
-	public List<Vehicle> getVehicleByModel(String modelDto) {
-
-		return this.accidentRepository.findByVehiclesModel(modelDto);
-	}
-
-	@Override
-	public List<Vehicle> findByVehiclesYear(int yearDto) {
-		return this.accidentRepository.findByVehiclesYear(yearDto);
-	}
-	@Override
-	public List<Vehicle> findByVehiclesMake(String makeDto) {
-		return this.accidentRepository.findByVehiclesMake(makeDto);
-	}
-
+	
 
 }

@@ -9,18 +9,20 @@ import org.springframework.stereotype.Service;
 import com.trafficaccidentsanalysis.backend.dto.AccidentDto;
 import com.trafficaccidentsanalysis.backend.model.Accident;
 import com.trafficaccidentsanalysis.backend.model.Vehicle;
+
 @Service
 public interface AccidentService {
-	
+
 	List<Accident> getAllAccident();
+
 	Accident saveAccident(AccidentDto accidentDto);
+
 	Accident saveAccident(Accident accident);
+
 	ResponseEntity<?> deleteAccident(Accident accident);
+
 	Accident updateAccident(Accident accident);
+
 	Set<Vehicle> getVehicleByAccidentId(int accidentId);
-	
-	List<Vehicle> getVehicleByModel (String modelDto);
-	List<Vehicle> findByVehiclesYear(int yearDto);
-	List<Vehicle> findByVehiclesMake(String makeDto);
-	//List<Vehicle> getVehicleByYearMake (int yearDto, String makeDto);
+
 }

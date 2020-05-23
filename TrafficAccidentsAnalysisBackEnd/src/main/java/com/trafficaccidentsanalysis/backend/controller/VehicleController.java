@@ -21,42 +21,61 @@ import com.trafficaccidentsanalysis.backend.service.VehicleService;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 
-
 @RestController
 @RequestMapping("/trafficaccidentsanalysis/vehicle")
 public class VehicleController {
 	@Autowired
-	
+
 	private VehicleService vehicleService;
-	
+
 	@Autowired
 	private AccidentService accidentService;
-	
+
 	@GetMapping("/getAll")
 	public List<Vehicle> getAllVehicle() {
 		return vehicleService.getAllVehicle();
 	}
+
 	@GetMapping("/getby/accident/{id}")
-	public Set<Vehicle> getAllVehicleByAccidentId(@PathVariable (value="id")int accidentId) {
+	public Set<Vehicle> getAllVehicleByAccidentId(@PathVariable(value = "id") int accidentId) {
 		return accidentService.getVehicleByAccidentId(accidentId);
 	}
-	
+
 	@PostMapping("/save")
 	public Vehicle saveVehicle(@RequestBody Vehicle vehicle) {
 		return vehicleService.saveVehicle(vehicle);
-		
+
 	}
 
 	@PutMapping("/update")
 	public Vehicle updateVehicle(@RequestBody Vehicle vehicle) {
 		return vehicleService.updateVehicle(vehicle);
-		
+
 	}
-	
+
 	@DeleteMapping("/delete")
 	public ResponseEntity<?> deleteVehicle(@RequestBody Vehicle vehicle) {
 		return vehicleService.deleteVehicle(vehicle);
-		
+
 	}
-	
+
+	@GetMapping("/getvehicle/model/{model}")
+	public List<Vehicle> getByModel(@PathVariable(value = "model") String modelDto) {
+		List<Vehicle> vehicles = vehicleService.findByModel(modelDto);
+		return vehicles;
+	}
+
+	@GetMapping("/getvehicle/year/{year}/accident/")
+	public List<Vehicle> getByYear(@PathVariable(value = "year") int yearDto) {
+		List<Vehicle> vehicles = vehicleService.findByYear(yearDto);
+		return vehicles;
+		// return accidentService.getVehicleByYearMake(yearDto, makeDto);
+	}
+
+	@GetMapping("/getvehicle/make/{make}/accident/")
+	public List<Vehicle> getByMake(@PathVariable(value = "make") String makeDto) {
+		List<Vehicle> vehicles = vehicleService.findByMake(makeDto);
+		return vehicles;
+
+	}
 }

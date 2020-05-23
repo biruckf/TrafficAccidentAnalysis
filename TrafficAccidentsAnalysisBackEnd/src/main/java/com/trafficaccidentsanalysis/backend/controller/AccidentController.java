@@ -26,7 +26,6 @@ import com.trafficaccidentsanalysis.backend.service.AccidentService;
 public class AccidentController {
 	@Autowired
 	private AccidentService accidentService;
-	private AccidentController vehicleService;
 
 	@PostMapping("/save")
 	public Accident saveAccident(@RequestBody AccidentDto accidentDto) {
@@ -52,16 +51,4 @@ public class AccidentController {
 
 	}
 
-	@GetMapping("/getvehicle/model/{model}/accident/")
-	public List<Vehicle> getVehicleByModel(@PathVariable(value = "model") String modelDto) {
-		return accidentService.getVehicleByModel(modelDto);
-	}
-
-	@GetMapping("/getvehicle/year/{year}/make/{make}/accident/")
-	public List<Vehicle> getByYearAndMake(@PathVariable(value = "year") int yearDto,
-			@PathVariable(value = "make") String makeDto) {
-		List<Vehicle> vehicles = vehicleService.getByYearAndMake(yearDto, makeDto);
-		return vehicles;
-		// return accidentService.getVehicleByYearMake(yearDto, makeDto);
-	}
 }

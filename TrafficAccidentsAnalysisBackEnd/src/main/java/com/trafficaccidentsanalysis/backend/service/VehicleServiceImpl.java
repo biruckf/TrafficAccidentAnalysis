@@ -8,12 +8,12 @@ import org.springframework.stereotype.Service;
 
 import com.trafficaccidentsanalysis.backend.model.Vehicle;
 import com.trafficaccidentsanalysis.backend.repository.VehicleRepository;
-@Service
-public  class VehicleServiceImpl implements VehicleService {
 
-	
+@Service
+public class VehicleServiceImpl implements VehicleService {
+
 	@Autowired
-	VehicleRepository vehicleRepository ;
+	VehicleRepository vehicleRepository;
 
 	@Override
 	public List<Vehicle> getAllVehicle() {
@@ -25,25 +25,25 @@ public  class VehicleServiceImpl implements VehicleService {
 		return vehicleRepository.save(vehicle);
 	}
 
-/*	I am tying to add this section for adding new vehicle. let me know.
-    @Override
-	public Vehicle addVehicle(Vehicle vehicle) {
-		// TODO Auto-generated method stub
-		return vehicleRepository.add(vehicle);
-	}   */
-	
+	/*
+	 * I am tying to add this section for adding new vehicle. let me know.
+	 * 
+	 * @Override public Vehicle addVehicle(Vehicle vehicle) { // TODO Auto-generated
+	 * method stub return vehicleRepository.add(vehicle); }
+	 */
+
 	@Override
 	public ResponseEntity<?> deleteVehicle(Vehicle vehicle) {
-		return (ResponseEntity<?>) vehicleRepository.findById(vehicle.getVehicleid()).map(vehicleDelete->{
+		return (ResponseEntity<?>) vehicleRepository.findById(vehicle.getVehicleid()).map(vehicleDelete -> {
 			vehicleRepository.delete(vehicleDelete);
-		return ResponseEntity.ok();
+			return ResponseEntity.ok();
 		}).orElseThrow(null);
 	}
 
 	@Override
 	public Vehicle updateVehicle(Vehicle vehicle) {
 		// TODO Auto-generated method stub
-		return vehicleRepository.findById(vehicle.getVehicleid()).map(oldVehicle->{
+		return vehicleRepository.findById(vehicle.getVehicleid()).map(oldVehicle -> {
 			oldVehicle.setAccident(vehicle.getAccident());
 			oldVehicle.setColor(vehicle.getColor());
 			oldVehicle.setMake(vehicle.getMake());
@@ -64,15 +64,26 @@ public  class VehicleServiceImpl implements VehicleService {
 			return vehicleRepository.save(oldVehicle);
 		}).orElseThrow(null);
 
-		}
+	}
 
 	@Override
 	public Vehicle findVehicleById(int vehicleId) {
 		return vehicleRepository.findById(vehicleId).orElse(null);
 	}
 
+	@Override
+	public List<Vehicle> findByModel(String modelDto) {
+		return this.vehicleRepository.findByModel(modelDto);
+	}
+
+	@Override
+	public List<Vehicle> findByYear(int yearDto) {
+		return this.vehicleRepository.findByYear(yearDto);
+	}
+
+	@Override
+	public List<Vehicle> findByMake(String makeDto) {
+		return this.vehicleRepository.findByMake(makeDto);
+	}
+
 }
-
-	
-
-
