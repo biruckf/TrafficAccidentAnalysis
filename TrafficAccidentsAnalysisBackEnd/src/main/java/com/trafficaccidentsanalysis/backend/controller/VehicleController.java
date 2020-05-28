@@ -15,6 +15,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.trafficaccidentsanalysis.backend.dto.MakeDto;
+import com.trafficaccidentsanalysis.backend.dto.ModelDto;
+import com.trafficaccidentsanalysis.backend.dto.VehicleDto;
+import com.trafficaccidentsanalysis.backend.dto.YearDto;
 import com.trafficaccidentsanalysis.backend.model.Vehicle;
 import com.trafficaccidentsanalysis.backend.service.AccidentService;
 import com.trafficaccidentsanalysis.backend.service.VehicleService;
@@ -42,7 +46,7 @@ public class VehicleController {
 	}
 
 	@PostMapping("/save")
-	public Vehicle saveVehicle(@RequestBody Vehicle vehicle) {
+	public Vehicle saveVehicle(@RequestBody VehicleDto vehicle) {
 		return vehicleService.saveVehicle(vehicle);
 
 	}
@@ -59,21 +63,21 @@ public class VehicleController {
 
 	}
 
-	@GetMapping("/getvehicle/model/{model}")
-	public List<Vehicle> getByModel(@PathVariable(value = "model") String modelDto) {
+	@GetMapping("/getvehicle/model")
+	public List<Vehicle> getByModel(@RequestBody ModelDto modelDto) {
 		List<Vehicle> vehicles = vehicleService.findByModel(modelDto);
 		return vehicles;
 	}
 
-	@GetMapping("/getvehicle/year/{year}/accident/")
-	public List<Vehicle> getByYear(@PathVariable(value = "year") int yearDto) {
+	@GetMapping("/getvehicle/year")
+	public List<Vehicle> getByYear(@RequestBody YearDto yearDto) {
 		List<Vehicle> vehicles = vehicleService.findByYear(yearDto);
 		return vehicles;
-		// return accidentService.getVehicleByYearMake(yearDto, makeDto);
+
 	}
 
-	@GetMapping("/getvehicle/make/{make}/accident/")
-	public List<Vehicle> getByMake(@PathVariable(value = "make") String makeDto) {
+	@GetMapping("/getvehicle/make")
+	public List<Vehicle> getByMake(@RequestBody MakeDto makeDto) {
 		List<Vehicle> vehicles = vehicleService.findByMake(makeDto);
 		return vehicles;
 

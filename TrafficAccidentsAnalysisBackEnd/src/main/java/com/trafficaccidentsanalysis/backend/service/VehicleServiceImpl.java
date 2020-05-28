@@ -6,6 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import com.trafficaccidentsanalysis.backend.dto.MakeDto;
+import com.trafficaccidentsanalysis.backend.dto.ModelDto;
+import com.trafficaccidentsanalysis.backend.dto.VehicleDto;
+import com.trafficaccidentsanalysis.backend.dto.YearDto;
 import com.trafficaccidentsanalysis.backend.model.Vehicle;
 import com.trafficaccidentsanalysis.backend.repository.VehicleRepository;
 
@@ -21,8 +25,12 @@ public class VehicleServiceImpl implements VehicleService {
 	}
 
 	@Override
-	public Vehicle saveVehicle(Vehicle vehicle) {
-		return vehicleRepository.save(vehicle);
+	public Vehicle saveVehicle(VehicleDto vehicle) {
+		Vehicle v = new Vehicle();
+		  v.setModel(vehicle.getModelDto());
+		  v.setMake(vehicle.getMakeDto());
+		  v.setYear(vehicle.getYearDto());
+		return vehicleRepository.save(v);
 	}
 
 	/*
@@ -36,6 +44,7 @@ public class VehicleServiceImpl implements VehicleService {
 	public ResponseEntity<?> deleteVehicle(Vehicle vehicle) {
 		return (ResponseEntity<?>) vehicleRepository.findById(vehicle.getVehicleid()).map(vehicleDelete -> {
 			vehicleRepository.delete(vehicleDelete);
+			
 			return ResponseEntity.ok();
 		}).orElseThrow(null);
 	}
@@ -72,18 +81,18 @@ public class VehicleServiceImpl implements VehicleService {
 	}
 
 	@Override
-	public List<Vehicle> findByModel(String modelDto) {
-		return this.vehicleRepository.findByModel(modelDto);
+	public List<Vehicle> findByModel(ModelDto modelDto) {
+		return this.vehicleRepository.findByModel(modelDto.getModelDto());
 	}
 
 	@Override
-	public List<Vehicle> findByYear(int yearDto) {
-		return this.vehicleRepository.findByYear(yearDto);
+	public List<Vehicle> findByYear(YearDto yearDto) {
+		return this.vehicleRepository.findByYear(yearDto.getYearDto());
 	}
 
 	@Override
-	public List<Vehicle> findByMake(String makeDto) {
-		return this.vehicleRepository.findByMake(makeDto);
+	public List<Vehicle> findByMake(MakeDto makeDto) {
+		return this.vehicleRepository.findByMake(makeDto.getMakeDto());
 	}
 
 }
