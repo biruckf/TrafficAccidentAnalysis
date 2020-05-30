@@ -17,6 +17,7 @@ import com.trafficaccidentsanalysis.backend.repository.MotoristRepository;
 
 	@Service
 	public class MotoristServiceImpl implements MotoristService{
+		
 		@Autowired
 		MotoristRepository motoristRepository;
 		@Autowired

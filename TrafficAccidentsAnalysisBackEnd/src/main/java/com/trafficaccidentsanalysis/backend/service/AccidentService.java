@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.trafficaccidentsanalysis.backend.dto.AccidentDto;
+import com.trafficaccidentsanalysis.backend.dto.CityDto;
 import com.trafficaccidentsanalysis.backend.model.Accident;
 import com.trafficaccidentsanalysis.backend.model.Vehicle;
 
@@ -24,5 +25,13 @@ public interface AccidentService {
 	Accident updateAccident(Accident accident);
 
 	Set<Vehicle> getVehicleByAccidentId(int accidentId);
+	
+	 //List<Accident>findByRegionAndCity(RegionDto regionDto, CityDto cityDto);
+
+	List<Accident> findByRegionAndCity(com.trafficaccidentsanalysis.backend.dto.RegionDto regionDto, CityDto cityDto);
+
+	
+
+    
 
 }

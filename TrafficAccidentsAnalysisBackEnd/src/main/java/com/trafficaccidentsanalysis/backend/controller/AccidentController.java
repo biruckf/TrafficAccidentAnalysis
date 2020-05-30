@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.trafficaccidentsanalysis.backend.dto.AccidentDto;
+import com.trafficaccidentsanalysis.backend.dto.CityDto;
+import com.trafficaccidentsanalysis.backend.dto.RegionDto;
 import com.trafficaccidentsanalysis.backend.model.Accident;
 import com.trafficaccidentsanalysis.backend.model.Vehicle;
 import com.trafficaccidentsanalysis.backend.service.AccidentService;
@@ -24,6 +26,7 @@ import com.trafficaccidentsanalysis.backend.service.AccidentService;
 
 @RequestMapping("/trafficaccidentanalysis/accident")
 public class AccidentController {
+	
 	@Autowired
 	private AccidentService accidentService;
 
@@ -49,6 +52,11 @@ public class AccidentController {
 	public ResponseEntity<?> deleteAccident(@RequestBody Accident accident) {
 		return accidentService.deleteAccident(accident);
 
+	}
+	@GetMapping("getaccident/region/City")
+	public List<Accident> getByRegionAndCity(@RequestBody RegionDto regionDto, CityDto cityDto) {
+		List<Accident> accident = accidentService.findByRegionAndCity(regionDto, cityDto);
+		return accident;
 	}
 
 }

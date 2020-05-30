@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import com.trafficaccidentsanalysis.backend.dotconverter.AccidentDtoConverter;
 import com.trafficaccidentsanalysis.backend.dotconverter.VehicleDtoConverter;
 import com.trafficaccidentsanalysis.backend.dto.AccidentDto;
+import com.trafficaccidentsanalysis.backend.dto.CityDto;
+import com.trafficaccidentsanalysis.backend.dto.RegionDto;
 import com.trafficaccidentsanalysis.backend.model.Accident;
 import com.trafficaccidentsanalysis.backend.model.Motorist;
 import com.trafficaccidentsanalysis.backend.model.Pedastrian;
@@ -102,6 +104,11 @@ public class AccidentServiceImpl implements AccidentService {
 			return accident.getVehicles();
 		else
 			return null;
+	}
+
+	@Override
+	public List<Accident> findByRegionAndCity( RegionDto regionDto, CityDto cityDto) {
+		return this.accidentRepository.findByRegionAndCity(regionDto.getRegion(), cityDto.getCity());
 	}
 
 	
