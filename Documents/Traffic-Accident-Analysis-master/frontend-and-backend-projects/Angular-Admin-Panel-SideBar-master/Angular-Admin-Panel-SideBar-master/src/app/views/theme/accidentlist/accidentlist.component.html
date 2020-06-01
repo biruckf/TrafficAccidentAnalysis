@@ -1,0 +1,50 @@
+<div class="col-lg-12">
+    <div class="card">
+      <div class="card-header">
+        <i class="fa fa-align-justify"></i> List of Accident
+      </div>
+      <!---->
+     
+       <!---->
+      <div class="card-body" >
+        <table class="table table-striped" >
+          <thead>
+            <tr>
+              
+              <th scope="col"> Accident ID</th>
+              <th scope="col">Accident Type</th>
+              <th scope="col">Additional Info</th>
+              <th scope="col">Address Location</th>
+              <th scope="col">Number of Death</th>
+              <th scope="col">City</th>
+              <th scope="col">Region</th>
+              
+              <th scope="col">Detail</th>
+              
+            </tr>
+          </thead>
+          <tbody *ngIf="accidents">
+            <tr *ngFor="let acc of accidents">
+              
+              <td>{{acc.accidentid}}</td> 
+              <td>{{acc.accidentType}}</td>
+              <td>{{acc.additionalInfo}}</td>
+              <td>{{acc.addressLocation}}</td>
+              <td>{{acc.numberOfDeath}}</td>
+              <td>{{acc.city}}</td>
+              <td>{{acc.region}}</td>
+             
+              <td>
+                <button  type= "button" (click)=" accidentDetail(acc.accidentid)" class="btn btn-block btn-primary">Detail</button>
+              </td>
+              
+            </tr>
+            
+          </tbody>
+        </table>
+        
+      </div>
+    </div>
+  </div>
+
+  <!--/.col-->
